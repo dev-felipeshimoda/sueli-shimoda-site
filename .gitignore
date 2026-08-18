@@ -1,0 +1,19 @@
+# Dependências
+node_modules/
+
+# Build (gerado por npm run build / npm run single)
+dist/
+standalone.html
+
+# Vercel
+.vercel/
+
+# Sistema e editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporários
+*.log
+*.tmp
