@@ -1,9 +1,11 @@
 # Dependências
 node_modules/
 
-# Build (gerado por npm run build / npm run single)
+# Build (regerado por npm run build)
 dist/
-standalone.html
+
+# HTML único do site atual, regerado por npm run single (16 MB por versão)
+site-v3/standalone.html
 
 # Vercel
 .vercel/

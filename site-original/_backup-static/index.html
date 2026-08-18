@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Sueli Shimoda | Advogada de Família e Previdenciário</title>
+<meta name="description" content="Advocacia humanizada em Direito de Família e Previdenciário. Divórcio, guarda, pensão, aposentadoria e benefícios do INSS. Atendimento sigiloso e próximo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0F1319;
+    --navy-2:#161C25;
+    --navy-3:#1C2530;
+    --cream:#F3EAD6;
+    --gold:#C6A15B;
+    --gold-soft:#D8BC83;
+    --light:#F6F1E6;
+    --muted:rgba(246,241,230,0.62);
+    --muted-2:rgba(246,241,230,0.45);
+    --line:rgba(198,161,91,0.28);
+    --maxw:1200px;
+    --edge:clamp(24px,5vw,64px);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;overflow-x:hidden;background:var(--navy);}
+  body{
+    font-family:'Montserrat',sans-serif;
+    background:var(--navy);
+    color:var(--light);
+    line-height:1.6;
+    overflow-x:hidden;
+    width:100%;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    user-select:none;
+    -webkit-touch-callout:none;
+  }
+  h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;}
+  a{text-decoration:none;color:inherit;}
+  img{display:block;max-width:100%;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .eyebrow{
+    font-size:13px;font-weight:700;text-transform:uppercase;
+    letter-spacing:0.28em;color:var(--gold);display:inline-block;
+  }
+  .rule{width:64px;height:3px;background:var(--gold);border:none;margin:18px 0 26px;}
+  .rule.center{margin-left:auto;margin-right:auto;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    font-weight:600;font-size:14px;letter-spacing:0.04em;
+    padding:16px 30px;border-radius:14px;cursor:pointer;
+    transition:transform .25s ease, background .25s ease, color .25s ease, box-shadow .25s ease;
+    border:1px solid transparent;
+  }
+  .btn-gold{background:var(--gold);color:var(--navy);box-shadow:0 10px 30px rgba(198,161,91,0.25);}
+  .btn-gold:hover{background:var(--gold-soft);transform:translateY(-2px);}
+  .btn-ghost{background:transparent;color:var(--light);border-color:var(--line);}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);}
+  .btn svg{width:18px;height:18px;}
+
+  /* ===== HEADER ===== */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    transition:background .35s ease, box-shadow .35s ease, padding .35s ease;
+    padding:22px 0;
+  }
+  header.scrolled{
+    background:rgba(15,19,25,0.92);
+    backdrop-filter:blur(10px);
+    box-shadow:0 6px 30px rgba(0,0,0,0.35);
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+  }
+  /* header ocupa a largura toda: logo perto da borda esquerda, CTA perto da direita */
+  header .wrap{max-width:100%;padding-left:var(--edge);padding-right:var(--edge);}
+  .nav{display:flex;align-items:center;justify-content:space-between;}
+  .logo{display:flex;align-items:center;gap:12px;}
+  .logo .mono{
+    font-family:'Cormorant Garamond',serif;font-weight:700;font-size:34px;
+    color:var(--gold);letter-spacing:0.05em;line-height:1;
+  }
+  .logo .txt{display:flex;flex-direction:column;line-height:1.1;}
+  .logo .txt b{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:21px;letter-spacing:0.12em;color:var(--light);}
+  .logo .txt span{font-size:10px;letter-spacing:0.34em;text-transform:uppercase;color:var(--gold);font-weight:600;}
+  .menu{display:flex;align-items:center;gap:34px;}
+  .menu a{font-size:14px;font-weight:500;letter-spacing:0.03em;color:var(--muted);transition:color .2s;position:relative;}
+  .menu a:hover{color:var(--light);}
+  .menu a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--gold);transition:width .25s;}
+  .menu a:hover::after{width:100%;}
+  .nav-cta{display:flex;align-items:center;gap:18px;}
+  /* CTA do header com a mesma altura (grossura) da logo da Sueli */
+  .nav-cta .btn{height:36px;padding-top:0;padding-bottom:0;font-size:13.5px;}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;}
+  .burger span{width:26px;height:2px;background:var(--light);transition:transform .3s ease, opacity .3s ease;}
+  .burger.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .burger.is-open span:nth-child(2){opacity:0;}
+  .burger.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  /* logo e CTA que aparecem so dentro do menu mobile */
+  .menu-logo{display:none;}
+  .menu-cta{display:none;}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;min-height:100vh;display:flex;align-items:center;
+    background:linear-gradient(90deg, rgba(15,19,25,0.98) 0%, rgba(15,19,25,0.93) 38%, rgba(15,19,25,0.66) 70%, rgba(15,19,25,0.42) 100%), url('assets/hero.jpg');
+    background-size:cover;background-position:center right;
+  }
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(15,19,25,0.5) 0%, transparent 25%, transparent 60%, rgba(15,19,25,0.85) 100%);pointer-events:none;}
+  /* hero puxa o texto e os botoes para perto da borda esquerda */
+  .hero .wrap{max-width:100%;padding-left:var(--edge);padding-right:var(--edge);}
+  .hero-inner{position:relative;z-index:2;max-width:680px;padding:120px 0 80px;}
+  .hero h1{
+    font-size:clamp(42px,6vw,82px);line-height:1.02;font-weight:700;
+    color:var(--light);margin-top:18px;text-shadow:0 4px 30px rgba(0,0,0,0.5);
+  }
+  .hero h1 em{font-style:normal;color:var(--gold);display:block;font-weight:600;}
+  .hero p.lead{
+    font-size:clamp(16px,2vw,19px);color:#E7DFCE;font-weight:300;
+    max-width:540px;margin:26px 0 38px;text-shadow:0 2px 14px rgba(0,0,0,0.5);
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:24px;}
+  .trust-band{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(0,0,0,0.18);}
+  .trust-solo{margin-top:0;margin-bottom:clamp(40px,6vw,64px);}
+  .trust-band .wrap{max-width:100%;display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;padding-left:var(--edge);padding-right:var(--edge);padding-top:28px;padding-bottom:28px;}
+  .trust-item{display:flex;align-items:center;gap:14px;min-width:200px;flex:1;}
+  .trust-item .n{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;color:var(--gold);line-height:1;}
+  .trust-item .l{font-size:13.75px;color:var(--muted);letter-spacing:0.04em;line-height:1.4;}
+
+  /* ===== SECTION BASE ===== */
+  section{position:relative;}
+  .pad{padding:110px 0;}
+  .sec-head{max-width:640px;}
+  .sec-head.center{margin:0 auto;text-align:center;}
+  .sec-head h2{font-size:clamp(32px,4.4vw,52px);font-weight:700;line-height:1.08;color:var(--light);}
+  .sec-head h2 em{font-style:normal;color:var(--gold);font-weight:600;}
+  .sec-head p{color:var(--muted);font-size:16px;font-weight:300;margin-top:18px;}
+
+  /* ===== SOBRE ===== */
+  .sobre{background:var(--navy-2);}
+  .sobre-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px;align-items:center;padding-top:clamp(60px,8vw,96px);padding-bottom:clamp(70px,9vw,110px);}
+  .sobre-media{position:relative;}
+  .sobre-media .frame{
+    position:relative;
+    border-radius:12px;overflow:hidden;border:1px solid var(--line);
+    box-shadow:0 30px 70px rgba(0,0,0,0.5);
+  }
+  .sobre-media .frame img{width:100%;height:560px;object-fit:cover;object-position:center 22%;filter:sepia(0.22) saturate(1.2) hue-rotate(-8deg) contrast(1.02) brightness(0.98);}
+  .sobre-media .frame::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(150deg, rgba(198,161,91,0.14), rgba(15,19,25,0.14));mix-blend-mode:soft-light;}
+  .sobre-media .accent{
+    position:absolute;left:-22px;top:-22px;width:120px;height:120px;
+    border-top:3px solid var(--gold);border-left:3px solid var(--gold);border-radius:4px 0 0 0;z-index:-0;
+  }
+  .sobre-media .badge{
+    position:absolute;right:-18px;bottom:34px;background:var(--gold);color:var(--navy);
+    padding:22px 26px;border-radius:10px;box-shadow:0 18px 40px rgba(0,0,0,0.45);text-align:center;
+  }
+  .sobre-media .badge b{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:700;line-height:1;display:block;}
+  .sobre-media .badge span{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;}
+  .sobre-text p.body{color:#D8D2C5;font-size:16px;font-weight:300;margin-bottom:18px;}
+  .sobre-text p.body strong{color:var(--light);font-weight:600;}
+  .quote{
+    border-left:3px solid var(--gold);padding:6px 0 6px 22px;margin:30px 0;
+    font-family:'Cormorant Garamond',serif;font-size:24px;font-style:italic;color:var(--cream);line-height:1.4;
+  }
+  .mini-stats{display:flex;gap:40px;margin-top:30px;flex-wrap:wrap;}
+  .mini-stats .ms b{font-family:'Cormorant Garamond',serif;font-size:34px;color:var(--gold);font-weight:700;display:block;line-height:1;}
+  .mini-stats .ms span{font-size:12.5px;color:var(--muted);letter-spacing:0.03em;}
+
+  /* ===== ÁREAS ===== */
+  .areas-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:60px;}
+  .area-card{
+    position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);
+    background:var(--navy-3);min-height:480px;display:flex;flex-direction:column;justify-content:flex-end;
+    transition:transform .35s ease, box-shadow .35s ease;
+  }
+  .area-card:hover{transform:translateY(-6px);box-shadow:0 30px 60px rgba(0,0,0,0.5);}
+  .area-card .img{position:absolute;inset:0;}
+  .area-card .img img{width:100%;height:100%;object-fit:cover;}
+  .area-card .img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(15,19,25,0.25) 0%, rgba(15,19,25,0.82) 55%, rgba(15,19,25,0.96) 100%);}
+  .area-card .body{position:relative;z-index:2;padding:38px 36px;}
+  .area-card .ico{width:54px;height:54px;border:1px solid var(--gold);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;background:rgba(15,19,25,0.4);}
+  .area-card .ico svg{width:28px;height:28px;stroke:var(--gold);}
+  .area-card h3{font-size:30px;font-weight:700;color:var(--light);margin-bottom:14px;}
+  .area-card ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px 0;margin-bottom:22px;}
+  .area-card ul li{font-size:13.5px;color:var(--muted);width:50%;padding-left:18px;position:relative;}
+  .area-card ul li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--gold);}
+  .area-link{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;transition:gap .2s;}
+  .area-link:hover{gap:14px;}
+
+  /* ===== EXPERIÊNCIA (scales) ===== */
+  .exp{background:var(--navy);}
+  .exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+  .exp-media{position:relative;display:flex;justify-content:center;}
+  .exp-media img{width:100%;max-width:440px;height:560px;object-fit:cover;border-radius:14px;border:1px solid var(--line);box-shadow:0 30px 70px rgba(0,0,0,0.55);}
+  .feature{display:flex;gap:18px;margin-top:28px;}
+  .feature .fi{flex-shrink:0;width:48px;height:48px;border-radius:10px;background:rgba(198,161,91,0.12);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;}
+  .feature .fi svg{width:24px;height:24px;stroke:var(--gold);}
+  .feature h4{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:600;color:var(--light);margin-bottom:4px;}
+  .feature p{font-size:14px;color:var(--muted);font-weight:300;}
+
+  /* ===== NÚMEROS band (faixa deslizante infinita) ===== */
+  .stats-band{background:linear-gradient(rgba(0,0,0,0.18),rgba(0,0,0,0.18)),var(--navy-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .marquee{overflow:hidden;padding:24px 0;}
+  .marquee-track{display:flex;align-items:center;width:max-content;animation:marquee-scroll 35s linear infinite;}
+  .mq-item{display:flex;align-items:center;gap:12px;padding:0 32px;white-space:nowrap;}
+  .mq-item b{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;color:var(--gold);line-height:1;}
+  .mq-item span{font-size:13.75px;color:var(--muted);letter-spacing:0.05em;}
+  .mq-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+  @keyframes marquee-scroll{from{transform:translateX(0);}to{transform:translateX(-33.333%);}}
+  @media(prefers-reduced-motion:reduce){.marquee-track{animation:none;}}
+
+  /* ===== COMO ATENDO ===== */
+  .como{background:var(--navy-2);}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:60px;}
+  .step{background:var(--navy-3);border:1px solid var(--line);border-radius:12px;padding:36px 28px;position:relative;transition:transform .3s ease, border-color .3s ease;}
+  .step:hover{transform:translateY(-6px);border-color:var(--gold);}
+  .step .num{font-family:'Cormorant Garamond',serif;font-size:58px;font-weight:700;color:rgba(198,161,91,0.28);line-height:1;}
+  .step h4{font-size:19px;font-weight:600;color:var(--light);margin:14px 0 10px;font-family:'Montserrat',sans-serif;}
+  .step p{font-size:14px;color:var(--muted);font-weight:300;}
+
+  /* ===== PARA QUEM ===== */
+  .quem{background:var(--navy);}
+  .quem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;}
+  .quem-card{background:var(--navy-2);border:1px solid var(--line);border-radius:12px;padding:32px 28px;transition:transform .3s ease, background .3s ease;}
+  .quem-card:hover{transform:translateY(-5px);background:var(--navy-3);}
+  .quem-card .ico{width:50px;height:50px;border-radius:10px;background:rgba(198,161,91,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+  .quem-card .ico svg{width:26px;height:26px;stroke:var(--gold);}
+  .quem-card h4{font-size:17px;font-weight:600;color:var(--light);margin-bottom:8px;font-family:'Montserrat',sans-serif;}
+  .quem-card p{font-size:14px;color:var(--muted);font-weight:300;}
+
+  /* ===== CTA ===== */
+  .cta{
+    position:relative;text-align:center;
+    background:linear-gradient(rgba(15,19,25,0.86),rgba(15,19,25,0.92)),url('assets/cta.jpg');
+    background-size:cover;background-position:center;
+  }
+  .cta .mono-big{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:700;color:var(--gold);}
+  .cta h2{font-size:clamp(34px,4.6vw,56px);font-weight:700;color:var(--light);max-width:760px;margin:14px auto 0;line-height:1.08;}
+  .cta p{color:var(--muted);font-size:17px;max-width:520px;margin:20px auto 36px;font-weight:300;}
+  .cta-phone{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,46px);font-weight:700;color:var(--gold);margin-top:30px;letter-spacing:0.02em;}
+  .cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+  /* ===== FOOTER ===== */
+  footer{background:#0A0D12;border-top:1px solid var(--line);padding:70px 0 30px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:50px;}
+  .foot-about p{color:var(--muted);font-size:14px;font-weight:300;margin-top:20px;max-width:330px;}
+  .foot-col h5{font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;font-weight:700;}
+  .foot-col a, .foot-col p{display:block;color:var(--muted);font-size:14px;margin-bottom:12px;transition:color .2s;font-weight:300;}
+  .foot-col a:hover{color:var(--light);}
+  .foot-bottom{border-top:1px solid rgba(246,241,230,0.08);margin-top:50px;padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--muted-2);font-size:12.5px;}
+
+  /* ===== WHATSAPP FLOAT ===== */
+  .wa-float{
+    position:fixed;right:24px;bottom:24px;z-index:90;width:58px;height:58px;border-radius:50%;
+    background:var(--navy);border:1.5px solid var(--gold);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.45);
+    transform:translateX(120px);opacity:0;pointer-events:none;
+    transition:transform .5s cubic-bezier(.22,1,.36,1), opacity .4s ease, background .25s;
+  }
+  .wa-float.show{transform:translateX(0);opacity:1;pointer-events:auto;}
+  .wa-float.show:hover{transform:translateX(0) scale(1.08);background:var(--navy-2);}
+  .wa-float svg{width:30px;height:30px;fill:var(--gold);}
+
+  /* ===== REVEAL ===== */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* ===== RESPONSIVE ===== */
+  /* Desktop escala via JS (fitDesktop): mesmo layout, so que reduzido para caber na janela.
+     A versao mobile abaixo so vale em telas de toque (celular/tablet), nunca no computador. */
+  @media(max-width:980px) and (pointer:coarse){
+    .sobre-grid,.exp-grid{grid-template-columns:1fr;gap:48px;}
+    .areas-grid{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr 1fr;}
+    .stats-grid{grid-template-columns:1fr 1fr;gap:40px 20px;}
+    .quem-grid{grid-template-columns:1fr 1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+    .exp-media{order:-1;}
+    .sobre-grid{gap:64px;}
+  }
+
+  /* menu overlay (mobile) */
+  .menu-overlay{
+    display:none;position:fixed;inset:0;z-index:99;
+    background:rgba(8,10,14,0.55);opacity:0;transition:opacity .3s ease;
+  }
+  .menu-overlay.show{display:block;opacity:1;}
+
+  @media(max-width:760px) and (pointer:coarse){
+    .menu{
+      position:fixed;inset:0;width:100%;height:100dvh;
+      background:rgba(11,13,18,0.985);backdrop-filter:blur(16px);flex-direction:column;
+      align-items:flex-start;justify-content:flex-start;gap:20px;padding:104px 44px 44px;
+      transform-origin:top right;transform:scale(0.35);
+      opacity:0;visibility:hidden;
+      transition:transform .45s cubic-bezier(.22,1,.36,1), opacity .35s ease, visibility .45s ease;
+      z-index:120;
+    }
+    .menu.open{transform:scale(1);opacity:1;visibility:visible;}
+    .menu-logo{display:flex;margin-bottom:16px;}
+    .menu a{font-size:22px;color:var(--light);}
+    .menu-cta{display:inline-flex;margin-top:18px;}
+    .burger{display:flex;position:fixed;top:24px;right:22px;z-index:130;}
+    .nav-cta .btn{display:none;}
+    .pad{padding:74px 0;}
+    .quem-grid,.foot-grid,.steps{grid-template-columns:1fr;}
+
+    /* HERO empilha corretamente */
+    .hero{min-height:auto;flex-direction:column;background-position:center top;}
+    .hero::after{display:none;}
+    .hero-inner{max-width:100%;width:100%;padding:130px 0 46px;}
+    .hero h1{font-size:clamp(34px,9vw,46px);}
+    .trust-band .wrap{display:grid;grid-template-columns:1fr 1fr;gap:22px 16px;padding-top:26px;padding-bottom:26px;}
+    .trust-item{min-width:0;width:auto;gap:12px;}
+    .trust-item .n{font-size:34px;}
+    .trust-item .l{font-size:11.5px;}
+
+    .sobre-media .frame img{height:460px;object-position:center 18%;}
+    .sobre-media .badge{right:12px;bottom:18px;padding:16px 20px;}
+    .sobre-media .badge b{font-size:30px;}
+    .sobre-media .accent{width:84px;height:84px;left:-12px;top:-12px;}
+    .mini-stats{gap:26px;}
+    .exp-media img{height:auto;max-height:520px;}
+  }
+
+  @media(max-width:480px) and (pointer:coarse){
+    .wrap{padding:0 20px;}
+    .stats-grid{grid-template-columns:1fr 1fr;gap:34px 16px;}
+    .hero-actions{flex-direction:column;align-items:stretch;}
+    .hero-actions .btn{width:100%;justify-content:center;}
+    .cta-actions{width:100%;}
+    .cta-actions .btn{width:100%;justify-content:center;}
+    .area-card{min-height:430px;}
+    .area-card .body{padding:30px 26px;}
+    .quote{font-size:21px;}
+    .sobre-media .frame img{height:420px;}
+    .foot-bottom{flex-direction:column;gap:8px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="#inicio" class="logo">
+      <div class="mono">SS</div>
+      <div class="txt"><b>SUELI SHIMODA</b><span>Advocacia</span></div>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#inicio" class="logo menu-logo">
+        <div class="mono">SS</div>
+        <div class="txt"><b>SUELI SHIMODA</b><span>Advocacia</span></div>
+      </a>
+      <a href="#inicio">Início</a>
+      <a href="#areas">Áreas</a>
+      <a href="#como">Como atendo</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+      <a href="#contato" class="btn btn-gold menu-cta">Falar no WhatsApp</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contato" class="btn btn-gold">Falar no WhatsApp</a>
+      <div class="burger" id="burger"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</header>
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div class="hero-inner">
+    <span class="eyebrow">Direito de Família &middot; Previdenciário</span>
+    <h1>Seus direitos merecem<br><em>cuidado, não só um processo.</em></h1>
+    <p class="lead">Advocacia humanizada para os momentos que mais importam. Atuação próxima, sigilosa e com a experiência de quem entende o seu lado.</p>
+    <div class="hero-actions">
+      <a href="#contato" class="btn btn-gold">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.59 5.295l-.999 3.648 3.908-1.024z"/></svg>
+        Agendar conversa
+      </a>
+      <a href="#areas" class="btn btn-ghost">Conhecer as áreas</a>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAIXA DE INFORMAÇÕES (abaixo do hero, com respiro) ===================== -->
+<div class="trust-band trust-solo reveal">
+  <div class="marquee">
+    <div class="marquee-track">
+      <div class="mq-item"><b>+20</b><span>Anos de experiência na advocacia</span></div><span class="mq-dot"></span>
+      <div class="mq-item"><b>100%</b><span>Sigilo e atendimento personalizado</span></div><span class="mq-dot"></span>
+      <div class="mq-item"><b>+200</b><span>Famílias atendidas</span></div><span class="mq-dot"></span>
+      <div class="mq-item"><b>SS</b><span>Sua parceira na busca por justiça e dignidade</span></div><span class="mq-dot"></span>
+      <div class="mq-item" aria-hidden="true"><b>+20</b><span>Anos de experiência na advocacia</span></div><span class="mq-dot"></span>
+      <div class="mq-item" aria-hidden="true"><b>100%</b><span>Sigilo e atendimento personalizado</span></div><span class="mq-dot"></span>
+      <div class="mq-item" aria-hidden="true"><b>+200</b><span>Famílias atendidas</span></div><span class="mq-dot"></span>
+      <div class="mq-item" aria-hidden="true"><b>SS</b><span>Sua parceira na busca por justiça e dignidade</span></div><span class="mq-dot"></span>
+      <div class="mq-item" aria-hidden="true"><b>+20</b><span>Anos de experiência na advocacia</span></div><span class="mq-dot"></span>
+      <div class="mq-item" aria-hidden="true"><b>100%</b><span>Sigilo e atendimento personalizado</span></div><span class="mq-dot"></span>
+      <div class="mq-item" aria-hidden="true"><b>+200</b><span>Famílias atendidas</span></div><span class="mq-dot"></span>
+      <div class="mq-item" aria-hidden="true"><b>SS</b><span>Sua parceira na busca por justiça e dignidade</span></div><span class="mq-dot"></span>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== ÁREAS ===================== -->
+<section class="pad" id="areas" style="background:var(--navy);">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Áreas de atuação</span>
+      <hr class="rule center">
+      <h2>Soluções jurídicas para <em>momentos que importam</em></h2>
+      <p>Atuação focada e aprofundada em duas áreas, para oferecer um atendimento realmente especializado em cada caso.</p>
+    </div>
+    <div class="areas-grid">
+      <article class="area-card reveal">
+        <div class="img"><img src="assets/familia.jpg" alt="Direito de Família"></div>
+        <div class="body">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21s-7-4.35-9-8.5C1.5 9 3.5 5.5 7 5.5c2 0 3.2 1.2 5 3 1.8-1.8 3-3 5-3 3.5 0 5.5 3.5 4 7-2 4.15-9 8.5-9 8.5z"/></svg></div>
+          <h3>Direito de Família</h3>
+          <ul>
+            <li>Divórcio judicial</li>
+            <li>Divórcio extrajudicial</li>
+            <li>Guarda dos filhos</li>
+            <li>Pensão alimentícia</li>
+            <li>Partilha de bens</li>
+            <li>União estável</li>
+          </ul>
+          <a href="#" data-wa data-wa-msg="Olá, Sueli! Vim pelo seu site e gostaria de conversar sobre um caso de Direito de Família." class="area-link">Falar sobre meu caso &rarr;</a>
+        </div>
+      </article>
+      <article class="area-card reveal">
+        <div class="img"><img src="assets/previdenciario.jpg" alt="Direito Previdenciário"></div>
+        <div class="body">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Direito Previdenciário</h3>
+          <ul>
+            <li>Aposentadorias</li>
+            <li>Auxílio por incapacidade</li>
+            <li>BPC / LOAS</li>
+            <li>Pensão por morte</li>
+            <li>Revisão de benefícios</li>
+            <li>Planejamento</li>
+          </ul>
+          <a href="#" data-wa data-wa-msg="Olá, Sueli! Vim pelo seu site e gostaria de conversar sobre um caso de Direito Previdenciário (INSS)." class="area-link">Falar sobre meu caso &rarr;</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PARA QUEM (depois de Áreas) ===================== -->
+<section class="quem pad" id="quem">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Para quem é</span>
+      <hr class="rule center">
+      <h2>Se você está passando por <em>um desses momentos</em></h2>
+    </div>
+    <div class="quem-grid">
+      <div class="quem-card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9-8.5C1.5 9 3.5 5.5 7 5.5c2 0 3.2 1.2 5 3 1.8-1.8 3-3 5-3 3.5 0 5.5 3.5 4 7-2 4.15-9 8.5-9 8.5z"/><path d="M12 6.5l-1.7 4 2.7 1.6-1.6 4"/></svg></div>
+        <h4>Separação ou divórcio</h4><p>Quem precisa encerrar um casamento com respeito, segurança e sem desgaste desnecessário.</p>
+      </div>
+      <div class="quem-card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="6.5" r="2.5"/><path d="M3.5 21v-4a4.5 4.5 0 019 0v4"/><circle cx="17.5" cy="10" r="2"/><path d="M14 21v-3a3.5 3.5 0 017 0v3"/></svg></div>
+        <h4>Disputa de guarda e pensão</h4><p>Pais e mães buscando proteger os filhos e garantir o que é justo para a família.</p>
+      </div>
+      <div class="quem-card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10M7 21h10"/><path d="M9 3v3.2c0 1.5 3 3 3 5.6 0-2.6 3-4.1 3-5.6V3"/><path d="M9 21v-3.2c0-1.5 3-3 3-5.6 0 2.6 3 4.1 3 5.6V21"/></svg></div>
+        <h4>Perto da aposentadoria</h4><p>Trabalhadores que querem se aposentar pela melhor regra, sem perder direitos.</p>
+      </div>
+      <div class="quem-card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l2-5 3.5 10L14 9l1.5 3H22"/></svg></div>
+        <h4>Afastados por doença</h4><p>Quem precisa de auxílio por incapacidade ou aposentadoria e teve o benefício negado.</p>
+      </div>
+      <div class="quem-card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5v2"/><path d="M3.5 12a8.5 8.5 0 0117 0z"/><path d="M12 12v7a2.5 2.5 0 005 0"/></svg></div>
+        <h4>Famílias que dependem do INSS</h4><p>Idosos e pessoas com deficiência em busca do BPC/LOAS ou pensão por morte.</p>
+      </div>
+      <div class="quem-card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="13" r="5.5"/><circle cx="15" cy="13" r="5.5"/></svg></div>
+        <h4>União estável</h4><p>Casais que querem reconhecer ou dissolver a união com segurança jurídica.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EXPERIÊNCIA ===================== -->
+<section class="exp pad">
+  <div class="wrap exp-grid">
+    <div class="exp-media reveal">
+      <img src="assets/experiencia.jpg" alt="Balança da justiça">
+    </div>
+    <div class="exp-text reveal">
+      <span class="eyebrow">Experiência que acolhe</span>
+      <hr class="rule">
+      <h2 class="serif" style="font-size:clamp(30px,4vw,48px);font-weight:700;line-height:1.1;">Técnica jurídica com <em style="font-style:normal;color:var(--gold);">sensibilidade humana</em></h2>
+      <p style="color:#D8D2C5;font-size:16px;font-weight:300;margin-top:18px;">A combinação que define o meu trabalho: rigor no Direito e cuidado com a pessoa por trás de cada processo.</p>
+      <div class="feature">
+        <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <div><h4>Atendimento sigiloso</h4><p>Sua história é tratada com total confidencialidade, do primeiro contato à resolução.</p></div>
+      </div>
+      <div class="feature">
+        <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <div><h4>Linguagem clara</h4><p>Explico cada etapa sem juridiquês, para você decidir com segurança e tranquilidade.</p></div>
+      </div>
+      <div class="feature">
+        <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87"/></svg></div>
+        <div><h4>Acompanhamento próximo</h4><p>Você não fica no escuro: acompanho seu caso de perto e mantenho você informado.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COMO ATENDO ===================== -->
+<section class="como pad" id="como">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Como funciona</span>
+      <hr class="rule center">
+      <h2>Um caminho simples, do <em>primeiro contato à solução</em></h2>
+      <p>Sem complicação e sem surpresas. Você sabe exatamente o que esperar em cada etapa.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="num">01</div><h4>Contato inicial</h4><p>Você me chama no WhatsApp e conta, com tranquilidade, o que está acontecendo.</p></div>
+      <div class="step reveal"><div class="num">02</div><h4>Análise do caso</h4><p>Avalio sua situação, esclareço suas dúvidas e explico os caminhos possíveis.</p></div>
+      <div class="step reveal"><div class="num">03</div><h4>Plano de ação</h4><p>Definimos juntos a melhor estratégia, com linguagem clara e expectativas reais.</p></div>
+      <div class="step reveal"><div class="num">04</div><h4>Acompanhamento</h4><p>Conduzo o processo e mantenho você informado em cada passo até a resolução.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOBRE (movida para depois de Como funciona) ===================== -->
+<section class="sobre" id="sobre">
+  <div class="wrap sobre-grid">
+    <div class="sobre-media reveal">
+      <div class="accent"></div>
+      <div class="frame"><img src="assets/sueli-formal.jpg" alt="Sueli Shimoda, advogada"></div>
+      <div class="badge"><b>+20</b><span>anos de experiência</span></div>
+    </div>
+    <div class="sobre-text reveal">
+      <span class="eyebrow">Quem é a Sueli</span>
+      <hr class="rule">
+      <h2 class="serif" style="font-size:clamp(30px,4vw,46px);font-weight:700;line-height:1.1;">Mais que advogada,<br>sua parceira na busca por <em style="font-style:normal;color:var(--gold);">justiça e dignidade.</em></h2>
+      <div style="height:24px;"></div>
+      <p class="body">Sou <strong>Sueli Shimoda</strong>, advogada dedicada ao Direito de Família e ao Direito Previdenciário. Escolhi essas áreas porque vivi de perto o que meus clientes vivem.</p>
+      <p class="body">Passei pelo meu próprio divórcio e ajudei minha mãe a conquistar a aposentadoria, enfrentando a burocracia do INSS. Foram essas experiências que me ensinaram a tratar cada caso como uma história, e não apenas como um processo.</p>
+      <p class="quote">"Cada pessoa que me procura está vivendo um momento difícil. Meu papel é cuidar disso com técnica, respeito e proximidade."</p>
+      <div class="mini-stats">
+        <div class="ms"><b>Família</b><span>divórcio, guarda e pensão</span></div>
+        <div class="ms"><b>INSS</b><span>aposentadoria e benefícios</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== NÚMEROS (entre Sobre e Vamos conversar) ===================== -->
+<section class="stats-band">
+  <div class="marquee">
+    <div class="marquee-track">
+      <div class="mq-item"><b>+20</b><span>Anos de experiência</span></div><span class="mq-dot"></span>
+      <div class="mq-item"><b>+200</b><span>Famílias atendidas</span></div><span class="mq-dot"></span>
+      <div class="mq-item"><b>100%</b><span>Sigilo e discrição</span></div><span class="mq-dot"></span>
+      <div class="mq-item"><b>SS</b><span>Sua parceira na busca por justiça e dignidade</span></div><span class="mq-dot"></span>
+      <div class="mq-item" aria-hidden="true"><b>+20</b><span>Anos de experiência</span></div><span class="mq-dot"></span>
+      <div class="mq-item" aria-hidden="true"><b>+200</b><span>Famílias atendidas</span></div><span class="mq-dot"></span>
+      <div class="mq-item" aria-hidden="true"><b>100%</b><span>Sigilo e discrição</span></div><span class="mq-dot"></span>
+      <div class="mq-item" aria-hidden="true"><b>SS</b><span>Sua parceira na busca por justiça e dignidade</span></div><span class="mq-dot"></span>
+      <div class="mq-item" aria-hidden="true"><b>+20</b><span>Anos de experiência</span></div><span class="mq-dot"></span>
+      <div class="mq-item" aria-hidden="true"><b>+200</b><span>Famílias atendidas</span></div><span class="mq-dot"></span>
+      <div class="mq-item" aria-hidden="true"><b>100%</b><span>Sigilo e discrição</span></div><span class="mq-dot"></span>
+      <div class="mq-item" aria-hidden="true"><b>SS</b><span>Sua parceira na busca por justiça e dignidade</span></div><span class="mq-dot"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section class="cta pad" id="contato">
+  <div class="wrap reveal">
+    <div class="mono-big">SS</div>
+    <span class="eyebrow">Vamos conversar</span>
+    <h2>Conte comigo para cuidar do que importa para você</h2>
+    <p>O primeiro passo é uma conversa. Sem compromisso, com total sigilo. Me chame no WhatsApp e vamos entender o seu caso juntos.</p>
+    <div class="cta-actions">
+      <a href="#" data-wa class="btn btn-gold">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.59 5.295l-.999 3.648 3.908-1.024z"/></svg>
+        Chamar no WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a href="#inicio" class="logo">
+          <div class="mono">SS</div>
+          <div class="txt"><b>SUELI SHIMODA</b><span>Advocacia</span></div>
+        </a>
+        <p>Advocacia humanizada em Direito de Família e Previdenciário. Mais que advogada, sua parceira na busca por justiça e dignidade.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Navegação</h5>
+        <a href="#sobre">Sobre</a>
+        <a href="#areas">Áreas de atuação</a>
+        <a href="#como">Como atendo</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <div class="foot-col">
+        <h5>Contato</h5>
+        <a href="#" data-wa>WhatsApp: 9 1919-0999</a>
+        <p>Atendimento com hora marcada</p>
+        <p>Sigilo e discrição garantidos</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Sueli Shimoda &middot; Advocacia. Todos os direitos reservados.</span>
+      <span>OAB &middot; Direito de Família &middot; Previdenciário</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp float -->
+<a href="#" data-wa class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.59 5.295l-.999 3.648 3.908-1.024zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+  // Número da Sueli — confirmar DDD com o Felipe (atual: 9 1919-0999, sem DDD).
+  // Ajustar WA_NUMBER para o formato internacional completo: 55 + DDD + número.
+  var WA_NUMBER = '55919190999';
+  var WA_MSG_PADRAO = 'Olá, Sueli! Encontrei seu site e gostaria de conversar sobre o meu caso.';
+  document.querySelectorAll('[data-wa]').forEach(function(a){
+    var msg = a.getAttribute('data-wa-msg') || WA_MSG_PADRAO;
+    a.setAttribute('href','https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg));
+    a.setAttribute('target','_blank');
+    a.setAttribute('rel','noopener');
+  });
+
+  // Header scrolled + botao flutuante do WhatsApp (aparece a partir da 2a secao)
+  var header = document.getElementById('header');
+  var waFloat = document.querySelector('.wa-float');
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY;
+    if(y > 40){ header.classList.add('scrolled'); }
+    else{ header.classList.remove('scrolled'); }
+    if(y > window.innerHeight * 0.7){ waFloat.classList.add('show'); }
+    else{ waFloat.classList.remove('show'); }
+  });
+
+  // Mobile menu
+  var burger = document.getElementById('burger');
+  var menu = document.getElementById('menu');
+  var overlay = document.getElementById('menuOverlay');
+  function openMenu(){ menu.classList.add('open'); overlay.classList.add('show'); burger.classList.add('is-open'); }
+  function closeMenu(){ menu.classList.remove('open'); overlay.classList.remove('show'); burger.classList.remove('is-open'); }
+  burger.addEventListener('click', function(e){
+    e.stopPropagation();
+    menu.classList.contains('open') ? closeMenu() : openMenu();
+  });
+  // fecha ao clicar nos links do menu
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', closeMenu);
+  });
+  // fecha com qualquer clique fora do menu (overlay ou resto da tela)
+  document.addEventListener('click', function(e){
+    if(menu.classList.contains('open') && !menu.contains(e.target) && e.target !== burger && !burger.contains(e.target)){
+      closeMenu();
+    }
+  });
+  // fecha com ESC
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeMenu(); });
+
+  // Reveal on scroll
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+
+  // ===== Layout fixo: bloquear copia de texto e zoom =====
+  ['copy','cut','contextmenu','selectstart','dragstart'].forEach(function(evt){
+    document.addEventListener(evt, function(e){ e.preventDefault(); });
+  });
+  // zoom por Ctrl + roda do mouse
+  window.addEventListener('wheel', function(e){ if(e.ctrlKey){ e.preventDefault(); } }, {passive:false});
+  // zoom por teclado (Ctrl/Cmd + '+', '-', '=', '0')
+  window.addEventListener('keydown', function(e){
+    if((e.ctrlKey || e.metaKey) && ['+','-','=','0'].indexOf(e.key) !== -1){ e.preventDefault(); }
+  });
+  // gesto de pinca (Safari / iOS)
+  ['gesturestart','gesturechange','gestureend'].forEach(function(evt){
+    document.addEventListener(evt, function(e){ e.preventDefault(); });
+  });
+
+  // ===== Desktop: escala o layout para caber na janela, sem reestruturar =====
+  // Mantem o layout de 1280px e apenas reduz proporcionalmente. No celular (toque) nao escala.
+  var DESIGN_W = 1280;
+  function fitDesktop(){
+    var root = document.documentElement;
+    if(window.matchMedia('(pointer: coarse)').matches){ root.style.zoom = ''; return; }
+    root.style.zoom = '1';
+    var w = root.clientWidth;
+    root.style.zoom = Math.min(1, w / DESIGN_W);
+  }
+  fitDesktop();
+  window.addEventListener('resize', fitDesktop);
+  window.addEventListener('orientationchange', fitDesktop);
+</script>
+
+</body>
+</html>

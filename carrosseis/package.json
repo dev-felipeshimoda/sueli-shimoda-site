@@ -1,0 +1,13 @@
+{
+  "name": "carrosseis-sueli-shimoda",
+  "private": true,
+  "description": "Renderiza os carrosseis de Instagram da Sueli Shimoda Advocacia em PNG 1080x1350",
+  "scripts": {
+    "render:01": "node 01-apresentacao/render.js",
+    "render:02": "node 02-divorcio/render.js",
+    "render:03": "node 03-previdenciario/render.js"
+  },
+  "dependencies": {
+    "playwright": "^1.62.1"
+  }
+}

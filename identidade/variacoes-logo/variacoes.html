@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Variações da logo | Sueli Shimoda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --terracotta: #603020;
+      --espresso: #241210;
+      --rose: #b68c76;
+      --taupe: #ad9d8e;
+      --paper: #f3f0eb;
+      --champagne: #b8a078;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    body {
+      font-family: Manrope, Arial, sans-serif;
+      text-rendering: optimizeLegibility;
+    }
+
+    .variation {
+      display: none;
+      width: 100vw;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    body[data-variation="1"] .variation-1,
+    body[data-variation="2"] .variation-2,
+    body[data-variation="3"] .variation-3 { display: flex; }
+
+    body.asset .variation { background: transparent !important; }
+
+    .variation-1 {
+      background: var(--terracotta);
+      color: var(--paper);
+    }
+
+    .vertical-lockup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .vertical-lockup img {
+      width: 230px;
+      height: auto;
+    }
+
+    .vertical-name {
+      margin-top: 24px;
+      font-family: Lora, Georgia, serif;
+      font-size: 48px;
+      font-weight: 400;
+      letter-spacing: .055em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .vertical-description {
+      margin-top: 14px;
+      color: var(--champagne);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+    }
+
+    .variation-2 {
+      background: #d8c8be;
+      color: var(--terracotta);
+    }
+
+    .horizontal-lockup {
+      display: grid;
+      grid-template-columns: 190px 290px;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .horizontal-lockup img {
+      width: 190px;
+      height: auto;
+    }
+
+    .horizontal-copy {
+      padding: 0;
+    }
+
+    .horizontal-name {
+      font-family: Lora, Georgia, serif;
+      font-size: 52px;
+      font-weight: 400;
+      letter-spacing: .02em;
+      line-height: .82;
+      text-transform: uppercase;
+    }
+
+    .horizontal-description {
+      margin-top: 17px;
+      color: var(--espresso);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .variation-3 {
+      background: var(--espresso);
+      color: var(--paper);
+    }
+
+    .circular-lockup {
+      position: relative;
+      width: 520px;
+      height: 520px;
+    }
+
+    .circular-lockup svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .circular-lockup .monogram {
+      position: absolute;
+      top: 185px;
+      left: 145px;
+      width: 230px;
+      height: auto;
+    }
+
+    .arc-name,
+    .arc-description {
+      font-family: Lora, Georgia, serif;
+      text-transform: uppercase;
+      fill: var(--paper);
+    }
+
+    .arc-name {
+      font-size: 39px;
+      font-weight: 400;
+      letter-spacing: 12px;
+    }
+
+    .arc-description {
+      font-family: Manrope, Arial, sans-serif;
+      font-size: 27px;
+      font-weight: 600;
+      letter-spacing: 10px;
+      fill: var(--champagne);
+    }
+
+    .dot { fill: var(--champagne); }
+  </style>
+</head>
+<body data-variation="1">
+  <section class="variation variation-1">
+    <div class="vertical-lockup">
+      <img src="../logos/monograma-ss-claro.png" alt="Monograma SS">
+      <div class="vertical-name">Sueli Shimoda</div>
+      <div class="vertical-description">Advocacia</div>
+    </div>
+  </section>
+
+  <section class="variation variation-2">
+    <div class="horizontal-lockup">
+      <img src="../logos/monograma-ss-terracota.png" alt="Monograma SS">
+      <div class="horizontal-copy">
+        <div class="horizontal-name">Sueli<br>Shimoda</div>
+        <div class="horizontal-description">Advocacia</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variation variation-3">
+    <div class="circular-lockup">
+      <svg viewBox="0 0 950 950" aria-hidden="true">
+        <defs>
+          <path id="top-arc" d="M 168 475 A 307 307 0 0 1 782 475"></path>
+          <path id="bottom-arc" d="M 174 522 A 307 307 0 0 0 776 522"></path>
+        </defs>
+        <circle class="dot" cx="125" cy="475" r="7"></circle>
+        <circle class="dot" cx="825" cy="475" r="7"></circle>
+        <text class="arc-name"><textPath href="#top-arc" startOffset="50%" text-anchor="middle">SUELI SHIMODA</textPath></text>
+        <text class="arc-description"><textPath href="#bottom-arc" startOffset="50%" text-anchor="middle">ADVOCACIA</textPath></text>
+      </svg>
+      <img class="monogram" src="../logos/monograma-ss-claro.png" alt="Monograma SS">
+    </div>
+  </section>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const variation = params.get('variation') || '1';
+    document.body.dataset.variation = variation;
+    if (params.get('asset') === '1') document.body.classList.add('asset');
+  </script>
+</body>
+</html>
