@@ -9,11 +9,11 @@ gsap.registerPlugin(ScrollTrigger)
 const areas = [
   {
     number: '01',
-    title: 'Direito de Família',
-    description: 'Orientação em divórcio, guarda, alimentos, inventário e outras decisões que atravessam relações e afetos.',
+    title: 'Direito de Família e Sucessões',
+    description: 'Orientação em divórcio, guarda, alimentos, partilha, inventário e testamento, decisões que atravessam relações, afetos e patrimônio.',
     image: '/assets/familia.jpg',
     alt: 'Mãos de uma família reunidas sobre uma mesa',
-    tag: 'Família',
+    tag: 'Família e Sucessões',
   },
   {
     number: '02',
@@ -23,21 +23,26 @@ const areas = [
     alt: 'Pessoa madura organizando documentos previdenciários',
     tag: 'Previdenciário',
   },
-  {
-    number: '03',
-    title: 'Direito Trabalhista',
-    description: 'Apoio para compreender direitos, documentos, acordos e caminhos possíveis nas relações de trabalho.',
-    image: '/assets/trabalhista-v2.png',
-    alt: 'Documentos de trabalho, crachá e caneta sobre uma mesa',
-    tag: 'Trabalhista',
-  },
 ]
 
 const guidance = [
   { number: '01', title: 'Não sei por onde começar', text: 'Informações desencontradas e opiniões diferentes tornam difícil entender qual atitude faz sentido agora.' },
   { number: '02', title: 'Tenho medo de decidir errado', text: 'Assinar, aceitar ou recusar uma proposta sem compreender os efeitos pode aumentar a insegurança.' },
   { number: '03', title: 'Prazos e documentos me preocupam', text: 'A dúvida sobre o que reunir e quando agir traz o receio de perder tempo ou deixar algo importante passar.' },
-  { number: '04', title: 'Quero proteger quem depende de mim', text: 'Questões familiares, previdenciárias ou trabalhistas podem afetar pessoas, renda e planos para o futuro.' },
+  { number: '04', title: 'Quero proteger quem depende de mim', text: 'Questões familiares, sucessórias ou previdenciárias podem afetar pessoas, renda e planos para o futuro.' },
+]
+
+const experiences = [
+  {
+    tag: 'Família e Sucessões',
+    title: 'Passei por um divórcio',
+    text: 'Sei o que é reorganizar a vida inteira enquanto tudo parece fora do lugar. Por isso escuto a sua história antes de falar em processo.',
+  },
+  {
+    tag: 'Previdenciário',
+    title: 'Acompanhei a aposentadoria da minha mãe',
+    text: 'Vi de perto como a burocracia consegue cansar uma família inteira. Por isso explico cada etapa em linguagem simples, sem termos que afastam.',
+  },
 ]
 
 const principles = [
@@ -51,56 +56,56 @@ const processPanels = [
     number: '01',
     label: 'Primeiro contato',
     title: 'Você conta a sua situação',
-    intro: 'A conversa começa pelo que aconteceu e pelo que mais preocupa você neste momento.',
+    intro: 'A conversa começa pelo que aconteceu e pelo que mais preocupa você neste momento. Não é preciso saber termos jurídicos nem chegar com tudo organizado, basta contar a história do seu jeito.',
     image: '/assets/processo-01-escuta.png',
     alt: 'Conversa acolhedora entre cliente e advogada',
     tone: 'espresso',
     points: [
-      ['Espaço para explicar', 'Você apresenta os fatos no seu ritmo.'],
-      ['Primeiras dúvidas', 'As questões mais urgentes entram em foco.'],
-      ['Sigilo desde o início', 'Tudo é tratado com discrição e respeito.'],
+      ['Espaço para explicar', 'Você apresenta os fatos no seu ritmo, sem pressa e sem precisar resumir o que ainda dói.'],
+      ['Primeiras dúvidas', 'As questões mais urgentes entram em foco, sobretudo as que envolvem prazo, dinheiro ou convivência.'],
+      ['Sigilo desde o início', 'Tudo o que você contar é tratado com discrição, inclusive antes de existir qualquer contratação.'],
     ],
   },
   {
     number: '02',
     label: 'Leitura do caso',
     title: 'Eu analiso o contexto',
-    intro: 'Documentos, histórico e particularidades são observados antes de qualquer orientação.',
+    intro: 'Documentos, histórico e particularidades são observados antes de qualquer orientação. Duas situações parecidas podem seguir caminhos diferentes por causa de um detalhe que só aparece na leitura atenta.',
     image: '/assets/processo-02-analise.png',
     alt: 'Advogada analisando documentos com atenção',
     tone: 'terracotta',
     points: [
-      ['Documentos e histórico', 'As informações relevantes são organizadas.'],
-      ['Urgências identificadas', 'Prazos e riscos recebem atenção imediata.'],
-      ['Contexto considerado', 'Nenhuma história é tratada como um caso genérico.'],
+      ['Documentos e histórico', 'Contratos, comprovantes, conversas e datas são organizados para mostrar o que sustenta o seu caso.'],
+      ['Urgências identificadas', 'Prazos e riscos recebem atenção imediata, porque algumas providências perdem força se ficarem para depois.'],
+      ['Contexto considerado', 'Nenhuma história é tratada como caso genérico, já que rotina, vínculos e patrimônio mudam o caminho possível.'],
     ],
   },
   {
     number: '03',
     label: 'Orientação',
     title: 'Você recebe um plano de ação',
-    intro: 'As alternativas são comparadas para transformar a análise em providências possíveis e bem definidas.',
+    intro: 'As alternativas são comparadas para transformar a análise em providências possíveis e bem definidas. Você entende o que pode ser feito, o que não pode e o que cada escolha costuma custar em tempo e em desgaste.',
     image: '/assets/processo-03-caminhos.png',
     alt: 'Advogada explicando possibilidades jurídicas em uma reunião',
     tone: 'taupe',
     points: [
-      ['Cenários comparados', 'Vantagens e limites entram na decisão.'],
-      ['Prioridades organizadas', 'O que precisa acontecer primeiro fica definido.'],
-      ['Providências indicadas', 'Você recebe uma sequência objetiva de ações.'],
+      ['Cenários comparados', 'Acordo, medida judicial ou espera, cada caminho aparece com as vantagens e os limites reais.'],
+      ['Prioridades organizadas', 'O que precisa acontecer primeiro fica definido, para você não gastar energia com o que pode esperar.'],
+      ['Providências indicadas', 'Você termina a conversa sabendo o próximo passo, quais documentos reunir e o que evitar fazer agora.'],
     ],
   },
   {
     number: '04',
     label: 'Acompanhamento',
     title: 'As providências são acompanhadas',
-    intro: 'Se houver continuidade, o andamento é conduzido com controle de prazos e atualização dos fatos relevantes.',
+    intro: 'Se houver continuidade, o andamento é conduzido com controle de prazos e atualização dos fatos relevantes. Você não precisa ficar cobrando notícias para saber em que ponto o seu caso está.',
     image: '/assets/processo-04-acompanhamento.png',
     alt: 'Pasta de documentos sendo entregue durante acompanhamento jurídico',
     tone: 'rose',
     points: [
-      ['Prazos monitorados', 'As datas importantes permanecem sob controle.'],
-      ['Movimentações comunicadas', 'As novidades relevantes chegam até você.'],
-      ['Estratégia revisada', 'Mudanças no cenário são incorporadas ao trabalho.'],
+      ['Prazos monitorados', 'As datas importantes ficam sob controle, com as providências preparadas antes do vencimento.'],
+      ['Movimentações comunicadas', 'As novidades que mudam alguma coisa chegam até você em linguagem simples, sem despejar termos técnicos.'],
+      ['Estratégia revisada', 'Se o cenário mudar, a rota é ajustada e você entende o motivo antes de qualquer decisão nova.'],
     ],
   },
 ]
@@ -120,7 +125,7 @@ const faqs = [
   },
   {
     question: 'Quais áreas são atendidas?',
-    answer: 'A atuação é concentrada em Direito de Família, Direito Previdenciário e Direito Trabalhista, sempre com análise individual da situação apresentada.',
+    answer: 'A atuação é concentrada em duas frentes, Direito de Família e Sucessões e Direito Previdenciário, sempre com análise individual da situação apresentada.',
   },
   {
     question: 'Todos os casos seguem o mesmo caminho?',
@@ -128,7 +133,7 @@ const faqs = [
   },
 ]
 
-const marqueeItems = ['Família', 'Previdenciário', 'Trabalhista', 'Escuta atenta', 'Orientação clara', 'Atendimento humano']
+const marqueeItems = ['Família', 'Sucessões', 'Previdenciário', 'Escuta atenta', 'Orientação clara', 'Atendimento humano']
 
 // A rolagem lateral do "Como funciona" é só de desktop com mouse. Tablet e celular usam a timeline vertical.
 const DESKTOP_PROCESS_QUERY = '(min-width: 1181px) and (pointer: fine)'
@@ -140,12 +145,6 @@ function useSiteAnimations(rootRef) {
     if (reduceMotion) return undefined
 
     const context = gsap.context(() => {
-      gsap.to('.scroll-progress', {
-        scaleX: 1,
-        ease: 'none',
-        scrollTrigger: { trigger: document.documentElement, start: 'top top', end: 'bottom bottom', scrub: 0.15 },
-      })
-
       gsap.fromTo(
         '.hero-word',
         { yPercent: 115, opacity: 0, rotate: 2 },
@@ -282,6 +281,37 @@ function useSiteAnimations(rootRef) {
   }, [rootRef])
 }
 
+function ScrollProgress() {
+  const barRef = useRef(null)
+
+  useEffect(() => {
+    const bar = barRef.current
+    if (!bar) return undefined
+
+    const update = () => {
+      const doc = document.documentElement
+      const max = doc.scrollHeight - window.innerHeight
+      const progress = max > 8 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0
+      bar.style.transform = `scaleX(${progress})`
+    }
+
+    update()
+    window.addEventListener('scroll', update, { passive: true })
+    window.addEventListener('resize', update)
+    // a altura da página muda depois do load (imagens, seção do processo, FAQ aberta)
+    const observer = new ResizeObserver(update)
+    observer.observe(document.body)
+
+    return () => {
+      window.removeEventListener('scroll', update)
+      window.removeEventListener('resize', update)
+      observer.disconnect()
+    }
+  }, [])
+
+  return <div className="scroll-progress" ref={barRef} aria-hidden="true" />
+}
+
 function WhisperText({ as: Tag = 'h2', className = '', children }) {
   return (
     <Tag className={className} data-whisper>
@@ -364,7 +394,7 @@ function Hero() {
       <div className="hero-copy-fade" aria-hidden="true" />
       <div className="shell hero-layout">
         <div className="hero-copy">
-          <p className="eyebrow hero-intro">Direito de Família, Previdenciário e Trabalhista</p>
+          <p className="eyebrow hero-intro">Direito de Família, Sucessões e Previdenciário</p>
           <h1 className="hero-title" aria-label="Orientação jurídica com escuta e critério técnico">
             <span className="hero-line"><span className="hero-word">Orientação jurídica</span></span>{' '}
             <span className="hero-line"><span className="hero-word"><em>com escuta</em></span></span>{' '}
@@ -410,9 +440,9 @@ function Areas() {
         <div className="section-heading split-heading">
           <div>
             <p className="eyebrow">Áreas de atuação</p>
-            <WhisperText>Atuação técnica em três frentes essenciais.</WhisperText>
+            <WhisperText>Atuação técnica em duas frentes essenciais.</WhisperText>
           </div>
-          <p data-reveal>Demandas familiares, previdenciárias e trabalhistas recebem leitura própria, de acordo com os fatos e os documentos envolvidos.</p>
+          <p data-reveal>Demandas familiares, sucessórias e previdenciárias recebem leitura própria, de acordo com os fatos e os documentos envolvidos.</p>
         </div>
         <div className="areas-grid">
           {areas.map((area) => (
@@ -616,10 +646,10 @@ function About() {
         <div className="about-copy">
           <p className="eyebrow">Sobre</p>
           <WhisperText>Sueli Shimoda</WhisperText>
-          <p data-reveal>Minha trajetória é dedicada às áreas de Família, Previdenciário e Trabalhista, com atenção às particularidades que tornam cada situação única.</p>
+          <p data-reveal>Minha trajetória é dedicada ao Direito de Família e Sucessões e ao Direito Previdenciário, com atenção às particularidades que tornam cada situação única.</p>
           <p data-reveal>O trabalho combina estudo contínuo, leitura minuciosa dos documentos e comunicação direta, sem perder de vista os efeitos concretos de cada escolha.</p>
           <div className="about-highlights" data-reveal>
-            <div><strong>Atuação concentrada</strong><span>Família, Previdenciário e Trabalhista.</span></div>
+            <div><strong>Atuação concentrada</strong><span>Família, Sucessões e Previdenciário.</span></div>
             <div><strong>Leitura minuciosa</strong><span>Fatos e documentos analisados em conjunto.</span></div>
           </div>
         </div>
@@ -627,6 +657,19 @@ function About() {
           <img src="/assets/sueli-fundo-branco-idv.jpg" alt="Sueli Shimoda, advogada" loading="lazy" />
           <figcaption>Sueli Shimoda | Advogada</figcaption>
         </figure>
+      </div>
+      <div className="shell about-life">
+        <p className="eyebrow">O que me trouxe até aqui</p>
+        <WhisperText as="p" className="about-life-lead">Antes de atender essas causas, eu vivi duas delas.</WhisperText>
+        <div className="about-life-grid">
+          {experiences.map((experience) => (
+            <article className="about-life-card" data-reveal key={experience.title}>
+              <span className="about-life-tag">{experience.tag}</span>
+              <h3>{experience.title}</h3>
+              <p>{experience.text}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   )
@@ -702,9 +745,8 @@ function Footer() {
           </div>
           <div>
             <h3>Atuação</h3>
-            <a href="#atuacao">Família</a>
+            <a href="#atuacao">Família e Sucessões</a>
             <a href="#atuacao">Previdenciário</a>
-            <a href="#atuacao">Trabalhista</a>
           </div>
           <div>
             <h3>Contato</h3>
@@ -729,7 +771,7 @@ export default function App() {
 
   return (
     <div className="app" ref={rootRef}>
-      <div className="scroll-progress" aria-hidden="true" />
+      <ScrollProgress />
       <Header />
       <main className="site-content">
         <Hero />
