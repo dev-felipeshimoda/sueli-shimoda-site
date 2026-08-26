@@ -1,10 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ArrowDown, ArrowRight, ArrowUpRight, Check, Menu, MessageCircle, Pin, Plus, ShieldCheck, X } from 'lucide-react'
+import { ArrowDown, ArrowRight, ArrowUpRight, Check, Menu, MessageCircle, Plus, ShieldCheck, X } from 'lucide-react'
 import { waLink } from './wa.js'
-
-gsap.registerPlugin(ScrollTrigger)
 
 const areas = [
   {
@@ -33,11 +30,6 @@ const guidance = [
 ]
 
 const experiences = [
-  {
-    tag: 'Família e Sucessões',
-    title: 'Passei por um divórcio',
-    text: 'Sei o que é reorganizar a vida inteira enquanto tudo parece fora do lugar. Por isso escuto a sua história antes de falar em processo.',
-  },
   {
     tag: 'Previdenciário',
     title: 'Acompanhei a aposentadoria da minha mãe',
@@ -135,15 +127,12 @@ const faqs = [
 
 const marqueeItems = ['Família', 'Sucessões', 'Previdenciário', 'Escuta atenta', 'Orientação clara', 'Atendimento humano']
 
-// A rolagem lateral do "Como funciona" é só de desktop com mouse. Tablet e celular usam a timeline vertical.
-const DESKTOP_PROCESS_QUERY = '(min-width: 1181px) and (pointer: fine)'
-const TIMELINE_PROCESS_QUERY = 'not all and (min-width: 1181px) and (pointer: fine)'
-
 function useSiteAnimations(rootRef) {
   useLayoutEffect(() => {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (reduceMotion) return undefined
 
+    let acelerarFaixa = null
     const context = gsap.context(() => {
       gsap.fromTo(
         '.hero-word',
@@ -163,121 +152,59 @@ function useSiteAnimations(rootRef) {
         { clipPath: 'inset(0 0% 0 0)', scale: 1, duration: 1, ease: 'power4.inOut', delay: 0.1 },
       )
 
-      gsap.utils.toArray('[data-whisper]').forEach((element) => {
-        const line = element.querySelector('.whisper-line') || element
-        gsap.fromTo(
-          line,
-          { y: 30, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.9,
-            ease: 'power3.out',
-            scrollTrigger: { trigger: element, start: 'top 88%', once: true },
-          },
-        )
-      })
-
-      gsap.utils.toArray('[data-reveal]').forEach((element) => {
-        gsap.fromTo(
-          element,
-          { y: 24, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.86,
-            ease: 'power3.out',
-            scrollTrigger: { trigger: element, start: 'top 88%', once: true },
-          },
-        )
-      })
-
-      gsap.fromTo(
-        '[data-pricing-card]',
-        { y: 58, opacity: 0, scale: 0.95 },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 0.9,
-          stagger: 0.12,
-          ease: 'power3.out',
-          scrollTrigger: { trigger: '.areas-grid', start: 'top 82%', once: true },
-        },
-      )
-
-      gsap.fromTo(
-        '.guidance-card',
-        { opacity: 0 },
-        {
-          opacity: 1,
-          duration: 0.75,
-          stagger: 0.1,
-          ease: 'power3.out',
-          scrollTrigger: { trigger: '.guidance-grid', start: 'top 84%', once: true },
-        },
-      )
-
       const marquee = gsap.to('.velocity-track', { xPercent: -50, duration: 26, ease: 'none', repeat: -1 })
-      ScrollTrigger.create({
-        start: 0,
-        end: 'max',
-        onUpdate(self) {
-          const speed = 1 + Math.min(Math.abs(self.getVelocity()) / 650, 3.2)
-          gsap.to(marquee, { timeScale: speed, duration: 0.16, overwrite: true })
-          gsap.to(marquee, { timeScale: 1, duration: 0.8, delay: 0.18, overwrite: 'auto' })
-        },
-      })
+      let ultimoY = window.scrollY
+      let ultimoTempo = performance.now()
 
-      const media = gsap.matchMedia()
-      media.add(DESKTOP_PROCESS_QUERY, () => {
-        const section = document.querySelector('.process-section')
-        const viewport = document.querySelector('.process-viewport')
-        const track = document.querySelector('.process-track')
-        if (!section || !viewport || !track) return undefined
+      acelerarFaixa = () => {
+        const agora = performance.now()
+        const intervalo = Math.max(16, agora - ultimoTempo)
+        const velocidade = Math.abs(window.scrollY - ultimoY) / intervalo
+        ultimoY = window.scrollY
+        ultimoTempo = agora
+        gsap.to(marquee, { timeScale: 1 + Math.min(velocidade * 1.4, 3.2), duration: 0.16, overwrite: true })
+        gsap.to(marquee, { timeScale: 1, duration: 0.8, delay: 0.18, overwrite: 'auto' })
+      }
 
-        const distance = () => Math.max(0, track.scrollWidth - viewport.clientWidth)
-        const holdDistance = () => Math.round(viewport.clientHeight * 0.65)
-        const progressCurrent = document.querySelector('.process-progress-current')
-        const sizeSection = () => {
-          section.style.height = `${viewport.clientHeight + distance() + holdDistance() * 2}px`
-        }
-        sizeSection()
-
-        const tween = gsap.to(track, {
-          x: () => -distance(),
-          ease: 'none',
-          scrollTrigger: {
-            trigger: section,
-            start: () => `top+=${holdDistance()} top`,
-            end: () => `+=${distance()}`,
-            scrub: 0.65,
-            invalidateOnRefresh: true,
-            onUpdate(self) {
-              if (progressCurrent) {
-                const step = Math.min(processPanels.length, Math.round(self.progress * (processPanels.length - 1)) + 1)
-                progressCurrent.textContent = String(step).padStart(2, '0')
-              }
-            },
-          },
-        })
-
-        window.addEventListener('resize', sizeSection)
-        return () => {
-          window.removeEventListener('resize', sizeSection)
-          section.style.height = ''
-          tween.kill()
-          gsap.set(track, { clearProps: 'transform' })
-        }
-      })
+      window.addEventListener('scroll', acelerarFaixa, { passive: true })
     }, rootRef)
 
-    const refresh = () => ScrollTrigger.refresh()
-    window.addEventListener('load', refresh)
     return () => {
-      window.removeEventListener('load', refresh)
+      if (acelerarFaixa) window.removeEventListener('scroll', acelerarFaixa)
       context.revert()
     }
+  }, [rootRef])
+}
+
+// A entrada dos blocos acompanha a rolagem direto, sem depender de posições
+// medidas antes da hora. Se o JS não rodar, o conteúdo aparece sem animação.
+function useReveal(rootRef) {
+  useEffect(() => {
+    const root = rootRef.current
+    if (!root) return undefined
+
+    document.documentElement.setAttribute('data-app-pronto', '')
+    let pendentes = Array.from(root.querySelectorAll('[data-reveal], [data-whisper], [data-pricing-card], .guidance-card'))
+
+    const revelar = () => {
+      const limite = window.innerHeight * 0.94
+      pendentes = pendentes.filter((alvo) => {
+        if (alvo.getBoundingClientRect().top > limite) return true
+        alvo.classList.add('is-in')
+        return false
+      })
+      if (!pendentes.length) desligar()
+    }
+
+    const desligar = () => {
+      window.removeEventListener('scroll', revelar)
+      window.removeEventListener('resize', revelar)
+    }
+
+    revelar()
+    window.addEventListener('scroll', revelar, { passive: true })
+    window.addEventListener('resize', revelar)
+    return desligar
   }, [rootRef])
 }
 
@@ -358,8 +285,8 @@ function Header() {
       <div className="shell header-inner">
         <Brand />
         <nav className={`main-nav${menuOpen ? ' is-open' : ''}`} aria-label="Navegação principal">
-          <a href="#atuacao" onClick={closeMenu}>Atuação</a>
           <a href="#orientacao" onClick={closeMenu}>Orientação</a>
+          <a href="#atuacao" onClick={closeMenu}>Atuação</a>
           <a href="#atendimento" onClick={closeMenu}>Como funciona</a>
           <a href="#sobre" onClick={closeMenu}>Sueli Shimoda</a>
           <a href="#faq" onClick={closeMenu}>Dúvidas</a>
@@ -445,10 +372,10 @@ function Areas() {
           <p data-reveal>Demandas familiares, sucessórias e previdenciárias recebem leitura própria, de acordo com os fatos e os documentos envolvidos.</p>
         </div>
         <div className="areas-grid">
-          {areas.map((area) => (
-            <article className="area-card" data-pricing-card key={area.title}>
+          {areas.map((area, index) => (
+            <article className="area-card" data-pricing-card style={{ '--reveal-index': index }} key={area.title}>
               <div className="area-image">
-                <img src={area.image} alt={area.alt} loading="lazy" />
+                <img src={area.image} alt={area.alt} width="1300" height="958" decoding="async" />
                 <span>{area.tag}</span>
               </div>
               <div className="area-content">
@@ -478,18 +405,13 @@ function Guidance() {
           <p data-reveal>Dúvidas, receio de perder um direito ou dificuldade para decidir podem ser sinais de que é hora de compreender melhor o cenário.</p>
         </div>
         <div className="guidance-grid">
-          <div className="guidance-track">
-            {guidance.map((item, index) => (
-              <article className="guidance-card" style={{ '--stack-index': index }} key={item.number}>
-                <Pin className="guidance-pin" size={25} strokeWidth={2.2} aria-hidden="true" />
-                <div className="guidance-card-face">
-                  <span>{item.number}</span>
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                </div>
-              </article>
-            ))}
-          </div>
+          {guidance.map((item, index) => (
+            <article className="guidance-card" style={{ '--reveal-index': index }} key={item.number}>
+              <span className="guidance-card-number">{item.number}</span>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>
@@ -522,11 +444,9 @@ function ProcessTimeline() {
   const [activeIndex, setActiveIndex] = useState(0)
 
   useEffect(() => {
-    const timelineMode = window.matchMedia(TIMELINE_PROCESS_QUERY)
-
     const update = () => {
       const root = timelineRef.current
-      if (!root || !timelineMode.matches) return
+      if (!root) return
       const items = Array.from(root.querySelectorAll('.process-timeline-item'))
       if (!items.length) return
 
@@ -604,37 +524,6 @@ function Process() {
   return (
     <section className="process-section" id="atendimento">
       <ProcessTimeline />
-      <div className="process-sticky">
-        <div className="process-topbar">
-          <p className="eyebrow">Como funciona</p>
-          <div className="process-progress" aria-hidden="true"><span className="process-progress-current">01</span><i /><span>04</span></div>
-          <p className="process-swipe-hint">Deslize para ver as próximas etapas <ArrowRight size={16} aria-hidden="true" /></p>
-        </div>
-        <div className="process-viewport">
-          <div className="process-track">
-            {processPanels.map((panel) => (
-              <article className={`process-panel process-tone-${panel.tone}`} key={panel.number}>
-                <div className="shell process-panel-inner">
-                  <div className="process-copy">
-                    <span className="process-pill">{panel.number} | {panel.label}</span>
-                    <h3>{panel.title}</h3>
-                    <p className="process-intro">{panel.intro}</p>
-                    <div className="process-points">
-                      {panel.points.map(([title, text]) => (
-                        <div className="process-point" key={title}>
-                          <Check size={18} strokeWidth={1.8} aria-hidden="true" />
-                          <div><h4>{title}</h4><p>{text}</p></div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="process-image"><img src={panel.image} alt={panel.alt} loading="lazy" /></div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </div>
     </section>
   )
 }
@@ -646,30 +535,29 @@ function About() {
         <div className="about-copy">
           <p className="eyebrow">Sobre</p>
           <WhisperText>Sueli Shimoda</WhisperText>
-          <p data-reveal>Minha trajetória é dedicada ao Direito de Família e Sucessões e ao Direito Previdenciário, com atenção às particularidades que tornam cada situação única.</p>
-          <p data-reveal>O trabalho combina estudo contínuo, leitura minuciosa dos documentos e comunicação direta, sem perder de vista os efeitos concretos de cada escolha.</p>
-          <div className="about-highlights" data-reveal>
-            <div><strong>Atuação concentrada</strong><span>Família, Sucessões e Previdenciário.</span></div>
-            <div><strong>Leitura minuciosa</strong><span>Fatos e documentos analisados em conjunto.</span></div>
+          <p data-reveal>Minha trajetória no Direito, especialmente no Direito de Família e Sucessões, também nasceu de uma experiência pessoal: o divórcio.</p>
+          <p data-reveal>Vivi de perto as dúvidas, os desafios e as emoções que envolvem o fim de uma relação. E foi essa experiência que me mostrou que, embora o divórcio seja um momento doloroso, ele também pode ser o início de um novo caminho.</p>
+          <p data-reveal>Hoje, uso minha experiência pessoal e profissional para ajudar pessoas a atravessarem esse momento com segurança, respeito e humanidade.</p>
+          <p data-reveal>Sei que um divórcio não é um momento tranquilo. Existem sentimentos, inseguranças, questões financeiras, filhos, patrimônio e decisões que precisam ser tomadas quando, muitas vezes, tudo parece estar fora do lugar.</p>
+          <p data-reveal>Porque o fim de uma história não precisa significar o fim de você. Pode ser o começo de uma nova história.</p>
+          <div className="about-life" data-reveal>
+            <p className="eyebrow">O que me trouxe até aqui</p>
+            <p className="about-life-lead">O divórcio não foi a única vez que vivi de perto o que hoje atendo.</p>
+            {experiences.map((experience) => (
+              <article className="about-life-card" key={experience.title}>
+                <div className="about-life-card-head">
+                  <span className="about-life-tag">{experience.tag}</span>
+                  <h3>{experience.title}</h3>
+                </div>
+                <p>{experience.text}</p>
+              </article>
+            ))}
           </div>
         </div>
         <figure className="about-image-frame" data-reveal>
-          <img src="/assets/sueli-fundo-branco-idv.jpg" alt="Sueli Shimoda, advogada" loading="lazy" />
+          <img src="/assets/sueli-escritorio-cortada.jpg" alt="Sueli Shimoda, advogada, sentada à mesa do escritório" width="1147" height="938" decoding="async" />
           <figcaption>Sueli Shimoda | Advogada</figcaption>
         </figure>
-      </div>
-      <div className="shell about-life">
-        <p className="eyebrow">O que me trouxe até aqui</p>
-        <WhisperText as="p" className="about-life-lead">Antes de atender essas causas, eu vivi duas delas.</WhisperText>
-        <div className="about-life-grid">
-          {experiences.map((experience) => (
-            <article className="about-life-card" data-reveal key={experience.title}>
-              <span className="about-life-tag">{experience.tag}</span>
-              <h3>{experience.title}</h3>
-              <p>{experience.text}</p>
-            </article>
-          ))}
-        </div>
       </div>
     </section>
   )
@@ -738,6 +626,7 @@ function Footer() {
         <div className="footer-columns">
           <div>
             <h3>Navegação</h3>
+            <a href="#orientacao">Quando buscar orientação</a>
             <a href="#atuacao">Áreas de atuação</a>
             <a href="#atendimento">Como funciona</a>
             <a href="#sobre">Sueli Shimoda</a>
@@ -768,6 +657,7 @@ function Footer() {
 export default function App() {
   const rootRef = useRef(null)
   useSiteAnimations(rootRef)
+  useReveal(rootRef)
 
   return (
     <div className="app" ref={rootRef}>
@@ -776,8 +666,8 @@ export default function App() {
       <main className="site-content">
         <Hero />
         <VelocityMarquee />
-        <Areas />
         <Guidance />
+        <Areas />
         <Principles />
         <Process />
         <About />
