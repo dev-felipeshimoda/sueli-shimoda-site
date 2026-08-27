@@ -970,7 +970,7 @@ figure {
   position: sticky;
   top: 112px;
   align-self: start;
-  margin-top: 11px;
+  margin-top: 35px;
   aspect-ratio: 1147 / 938;
   overflow: hidden;
   background: var(--espresso-soft);
@@ -1177,7 +1177,7 @@ figure {
 
 .faq-answer p {
   max-width: 620px;
-  padding: 0 44px 30px 52px;
+  padding: 16px 44px 32px 52px;
   color: rgba(243, 240, 235, 0.64);
   font-size: 13px;
   line-height: 1.78;
@@ -1666,11 +1666,6 @@ figure {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .process-section {
-    padding: 0;
-    overflow: hidden;
-  }
-
   .about-layout {
     max-width: 780px;
     gap: 52px;
@@ -1678,6 +1673,7 @@ figure {
 
   .about-image-frame {
     position: relative;
+    top: auto;
     width: 100%;
     margin-top: 0;
     aspect-ratio: 1147 / 938;
@@ -1884,10 +1880,6 @@ figure {
     grid-template-columns: 42px 1fr;
   }
 
-  .process-section {
-    padding: 0;
-  }
-
   .about-life {
     margin-top: 32px;
     padding-top: 26px;
@@ -1909,6 +1901,7 @@ figure {
 
   .about-image-frame {
     position: relative;
+    top: auto;
     margin-top: 0;
     aspect-ratio: 1147 / 938;
   }
@@ -1924,7 +1917,7 @@ figure {
   }
 
   .faq-answer p {
-    padding: 0 40px 26px 34px;
+    padding: 14px 40px 30px 42px;
   }
 
   .contact-section {
@@ -2061,7 +2054,7 @@ figure {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(22, 11, 9, 0.94) 0%, rgba(22, 11, 9, 0.74) 24%, rgba(22, 11, 9, 0.82) 62%, rgba(22, 11, 9, 0.96) 100%);
+    linear-gradient(180deg, rgba(22, 11, 9, 0.9) 0%, rgba(22, 11, 9, 0.42) 26%, rgba(22, 11, 9, 0.5) 60%, rgba(22, 11, 9, 0.9) 100%);
 }
 
 .process-timeline-list {
@@ -2476,6 +2469,7 @@ figure {
 
   .about-image-frame {
     position: relative;
+    top: auto;
     width: 100%;
     margin-top: 0;
     aspect-ratio: 1147 / 938;
