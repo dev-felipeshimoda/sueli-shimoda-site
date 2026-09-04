@@ -1,0 +1,419 @@
+@font-face {
+  font-family: "Lora Local";
+  src: url("./04-pensao-7-sinais/fontes/Lora-Variable.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400 700;
+}
+
+@font-face {
+  font-family: "Lora Local";
+  src: url("./04-pensao-7-sinais/fontes/Lora-Italic-Variable.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 400 700;
+}
+
+@font-face {
+  font-family: "Manrope Local";
+  src: url("./04-pensao-7-sinais/fontes/Manrope-Variable.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 200 800;
+}
+
+:root {
+  --terracota: #603020;
+  --espresso: #241210;
+  --rose: #b68c76;
+  --taupe: #ad9d8e;
+  --branco: #f3f0eb;
+  --champagne: #b8a078;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #706863;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 44px;
+  padding: 44px;
+  font-family: "Manrope Local", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.slide {
+  position: relative;
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+  padding: 70px 72px 58px;
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+}
+
+.theme-dark {
+  background: var(--espresso);
+  color: var(--branco);
+  --detail: var(--champagne);
+}
+
+.theme-terracotta {
+  background: var(--terracota);
+  color: var(--branco);
+  --detail: var(--champagne);
+}
+
+.theme-light {
+  background: var(--branco);
+  color: var(--espresso);
+  --detail: var(--terracota);
+}
+
+.theme-rose {
+  background: var(--rose);
+  color: var(--espresso);
+  --detail: var(--terracota);
+}
+
+.theme-taupe {
+  background: var(--taupe);
+  color: var(--espresso);
+  --detail: var(--terracota);
+}
+
+.texture::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.38;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.08), transparent 36%),
+    radial-gradient(circle at 90% 80%, rgba(36, 18, 16, 0.1), transparent 44%);
+}
+
+.topbar,
+.footer {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.topbar {
+  min-height: 34px;
+}
+
+.topbar .area,
+.topbar .page {
+  color: var(--detail);
+}
+
+.topbar .brand strong {
+  font-weight: 800;
+}
+
+.content {
+  position: relative;
+  z-index: 4;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 38px 0 52px;
+}
+
+.content.top {
+  justify-content: flex-start;
+  padding-top: 116px;
+}
+
+.content.bottom {
+  justify-content: flex-end;
+  padding-bottom: 92px;
+}
+
+.eyebrow {
+  color: var(--detail);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 19px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.display {
+  max-width: 910px;
+  font-size: 78px;
+  line-height: 1.02;
+  letter-spacing: -0.062em;
+  font-weight: 560;
+}
+
+.display.lg {
+  font-size: 90px;
+  line-height: 0.98;
+}
+
+.display.xl {
+  font-size: 104px;
+  line-height: 0.92;
+}
+
+.display.sm {
+  font-size: 68px;
+  line-height: 1.05;
+}
+
+.serif {
+  font-family: "Lora Local", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+}
+
+.accent {
+  display: inline;
+  padding: 0 0.08em 0.05em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.accent-terracotta {
+  background: var(--terracota);
+  color: var(--branco);
+}
+
+.accent-rose {
+  background: var(--rose);
+  color: var(--espresso);
+}
+
+.accent-light {
+  background: var(--branco);
+  color: var(--espresso);
+}
+
+.accent-dark {
+  background: var(--espresso);
+  color: var(--branco);
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-thickness: 0.07em;
+  text-underline-offset: 0.1em;
+  text-decoration-color: var(--detail);
+}
+
+.bodycopy {
+  max-width: 790px;
+  font-size: 37px;
+  line-height: 1.34;
+  letter-spacing: -0.025em;
+  font-weight: 440;
+}
+
+.bodycopy + .bodycopy {
+  margin-top: 32px;
+}
+
+.bodycopy strong {
+  font-weight: 760;
+}
+
+.note {
+  max-width: 670px;
+  margin-top: 48px;
+  font-family: "Lora Local", Georgia, serif;
+  font-size: 33px;
+  line-height: 1.25;
+  font-style: italic;
+  color: var(--detail);
+}
+
+.rule {
+  width: 172px;
+  height: 4px;
+  margin: 44px 0;
+  background: var(--detail);
+}
+
+.frame {
+  position: absolute;
+  z-index: 1;
+  inset: 165px 58px 148px;
+  border: 2px solid color-mix(in srgb, var(--detail) 72%, transparent);
+  border-radius: 32px 32px 0 32px;
+  pointer-events: none;
+}
+
+.frame.cut::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 8px;
+  right: -4px;
+  top: -5px;
+  background: currentColor;
+  color: inherit;
+}
+
+.photo {
+  background-image: linear-gradient(var(--photo-overlay, rgba(36, 18, 16, 0.36)), var(--photo-overlay, rgba(36, 18, 16, 0.36))), var(--photo);
+  background-size: cover;
+  background-position: var(--photo-position, center);
+  color: var(--branco);
+  --detail: var(--champagne);
+}
+
+.photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--gradient, linear-gradient(180deg, rgba(36, 18, 16, 0.16), rgba(36, 18, 16, 0.7)));
+}
+
+.split-photo {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 52%;
+  background: var(--photo) var(--photo-position, center) / cover no-repeat;
+}
+
+.split-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--fade-color, var(--branco)) 0%, transparent 42%);
+}
+
+.quote {
+  max-width: 800px;
+  padding-left: 42px;
+  border-left: 8px solid var(--detail);
+}
+
+.steps {
+  display: grid;
+  gap: 18px;
+  margin-top: 46px;
+  max-width: 850px;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 66px 1fr;
+  gap: 24px;
+  align-items: center;
+  padding: 22px 28px;
+  background: color-mix(in srgb, currentColor 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--detail) 48%, transparent);
+}
+
+.step .n {
+  font-family: "Lora Local", Georgia, serif;
+  font-size: 34px;
+  font-style: italic;
+  color: var(--detail);
+}
+
+.step .t {
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 650;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  margin-top: 52px;
+  padding: 18px 30px 20px;
+  border: 2px solid var(--detail);
+  border-radius: 999px;
+  color: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.footer {
+  padding-top: 18px;
+  border-top: 1px solid color-mix(in srgb, currentColor 42%, transparent);
+  font-size: 13px;
+  letter-spacing: 0.105em;
+}
+
+.footer .swipe {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--detail);
+}
+
+.footer .arrow {
+  font-size: 22px;
+  line-height: 0;
+}
+
+.legal-pending {
+  opacity: 0.74;
+}
+
+.corner-number {
+  position: absolute;
+  z-index: 1;
+  right: 42px;
+  bottom: 64px;
+  font-family: "Lora Local", Georgia, serif;
+  font-size: 310px;
+  line-height: 0.7;
+  font-style: italic;
+  color: color-mix(in srgb, var(--detail) 16%, transparent);
+}
+
+.text-right {
+  margin-left: auto;
+  text-align: right;
+}
+
+.max-680 {
+  max-width: 680px;
+}
+
+.max-760 {
+  max-width: 760px;
+}
+
+.mt-24 {
+  margin-top: 24px;
+}
+
+.mt-36 {
+  margin-top: 36px;
+}
+
+.mt-48 {
+  margin-top: 48px;
+}
+
+.mt-64 {
+  margin-top: 64px;
+}

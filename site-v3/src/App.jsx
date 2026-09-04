@@ -640,8 +640,10 @@ function Footer() {
           <div>
             <h3>Contato</h3>
             <a href={waLink()} target="_blank" rel="noreferrer">WhatsApp</a>
-            <a href="mailto:contato@suelishimoda.adv.br">E-mail</a>
-            <span>Atendimento com hora marcada</span>
+            <a href="https://www.instagram.com/shimoda_advogada/" target="_blank" rel="noreferrer">Instagram</a>
+            <a href="mailto:contato@shimoda.adv.br">E-mail</a>
+            <span>São Paulo, zona oeste</span>
+            <span>Atendimento presencial ou online, com hora marcada</span>
           </div>
         </div>
         <div className="footer-wordmark" aria-hidden="true">Sueli Shimoda</div>

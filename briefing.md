@@ -5,13 +5,12 @@
 
 ## Quem é
 
-Sueli Shimoda, advogada. Atua em Direito de Família, Previdenciário e Trabalhista. Hoje não tem presença digital (sem Instagram ativo, sem site). Os clientes chegam por indicação. O projeto é lançar essa presença online.
+Sueli Shimoda, advogada. Atua em Direito de Família e Previdenciário. Hoje não tem presença digital (sem Instagram ativo, sem site). Os clientes chegam por indicação. O projeto é lançar essa presença online.
 
 ## Áreas e dores do cliente (foco do conteúdo)
 
 - **Família:** divórcio (judicial e extrajudicial), pensão, guarda, partilha.
 - **Previdenciário (INSS):** aposentadoria, pensão por morte, auxílio-doença, BPC/LOAS, revisões. A Sueli pediu foco nessas dores.
-- **Trabalhista:** verbas rescisórias, horas extras, assédio, descontos indevidos.
 
 ## Posicionamento que a Sueli quer
 
@@ -34,15 +33,45 @@ As histórias são verdadeiras. O trabalho é dar forma a elas, não inventar fa
 3. **Conteúdo previdenciário:** dores reais (aposentadoria, pensão por morte, auxílio-doença), com o gancho pessoal da mãe.
 4. **Conteúdo de família / divórcio:** com o gancho pessoal do divórcio dela.
 
-## Guardrails (publicidade jurídica, OAB)
+## Guardrails de publicidade e marketing jurídico (OAB, TED)
 
-- Tom informativo e sóbrio. Sem prometer resultado nem sensacionalismo.
-- Sem captação mercantilista. Pode mostrar experiência e acolhimento, não "promoção".
-- Histórias pessoais só se verdadeiras.
-- A Sueli é a responsável final pela conformidade. Conferir com ela antes de publicar.
+> Regra dura. Vale pra site, landing page, carrossel, legenda, bio, anúncio pago e resposta no direct.
+> Base: Código de Ética e Disciplina da OAB (arts. 39 a 47) e Provimento 205/2021 do CFOAB.
+> Quem fiscaliza e julga infração é o Tribunal de Ética e Disciplina (TED) da seccional da OAB.
+> Advogado responde disciplinarmente por publicidade irregular, então na dúvida vai a versão mais sóbria.
+
+**Princípio:** a comunicação do advogado é informativa, discreta e sóbria. Ela existe pra esclarecer,
+não pra vender. Publicidade mercantilista e captação de clientela são vedadas.
+
+**Pode:**
+- Explicar o direito em linguagem simples, educar sobre um tema, tirar dúvida comum.
+- Mostrar áreas de atuação, formação, experiência, forma de trabalho e canais de contato.
+- Contar história pessoal verdadeira dela (o divórcio, a aposentadoria da mãe), sem virar apelo emocional de venda.
+- Conteúdo em redes sociais e impulsionamento de conteúdo informativo.
+
+**Não pode:**
+- Prometer, garantir ou insinuar resultado ("ganhe sua causa", "garanto seu benefício", "receba o que é seu").
+- Superlativo e autoelogio: "o melhor", "líder", "referência", "número 1", "maior escritório".
+- Usar "especialista" sem título que comprove a especialização.
+- Falar de preço, desconto, promoção, parcelamento, condição especial ou consulta grátis como chamariz.
+- Oferecer serviço sobre caso concreto ou fazer oferta em massa ("entrou na justiça? me chama que eu resolvo").
+- Expor caso, foto, nome ou print de cliente. Sigilo profissional vale mesmo com autorização informal.
+- Sensacionalismo, urgência artificial, gatilho de escassez, linguagem de infoproduto.
+- Depoimento de cliente e review usado como propaganda.
+- Anúncio em rádio, TV, outdoor, busdoor, painel luminoso, alto-falante e panfletagem em via pública.
+- Concurso, sorteio, brinde ou qualquer mecânica promocional.
+
+**Obrigatório em toda peça:**
+- Nome completo e número de inscrição na OAB (com a seccional).
+- CTA sóbrio: convidar pra conversar ou tirar dúvida, nunca pressionar pra contratar.
+
+**Responsabilidade final é da Sueli.** Nada vai ao ar sem ela ler e aprovar. Se ela pedir algo que
+esbarra nessas regras, avisar antes de produzir, com a alternativa que resolve.
 
 ## Pendências (confirmar com a Sueli, via Felipe)
 
 - Número de telefone NOVO (o atual nas peças é 9-1919-0999).
 - @ do Instagram dela.
 - Fotos: usar as que já existem ou ela manda novas.
+- **Número de inscrição na OAB e seccional.** Hoje não aparece no site nem nas peças, e a identificação
+  do advogado é exigência da publicidade jurídica. Pedir pra Sueli e colocar no rodapé do site e na assinatura das artes.

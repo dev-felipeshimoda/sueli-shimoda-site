@@ -6,7 +6,7 @@ const { chromium } = require('playwright');
 const LARGURA = 1080;
 const ALTURA = 1350;
 
-async function render(dir) {
+async function render(dir, inicio = 1) {
   const html = path.join(dir, 'carrossel.html');
   if (!fs.existsSync(html)) throw new Error('carrossel.html nao encontrado em ' + dir);
 
@@ -32,7 +32,7 @@ async function render(dir) {
   console.log(path.basename(dir) + ': ' + slides.length + ' slides');
 
   for (let i = 0; i < slides.length; i++) {
-    const nome = 'slide-' + String(i + 1).padStart(2, '0') + '.png';
+    const nome = 'slide-' + String(i + inicio).padStart(2, '0') + '.png';
     await slides[i].screenshot({ path: path.join(saida, nome) });
     console.log('  ' + nome);
   }

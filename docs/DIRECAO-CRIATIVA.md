@@ -29,14 +29,14 @@ O 3D aparece apenas na primeira dobra. Ele reforça a promessa de proteção sem
 
 - Tipo: landing page institucional com foco em contato.
 - Objetivo: apresentar Sueli Shimoda, explicar sua atuação e levar o visitante ao WhatsApp.
-- Público: pessoas vivendo questões familiares, previdenciárias ou trabalhistas e que precisam de orientação clara.
+- Público: pessoas vivendo questões familiares ou previdenciárias e que precisam de orientação clara.
 - Sensação: sofisticação, confiança, acolhimento e discrição.
 
 ## Estrutura
 
 1. Hero imersivo: promessa principal, retrato da Sueli, cena 3D e contato.
 2. Faixa de confiança: escuta, clareza e responsabilidade.
-3. Áreas de atuação: Família, Previdenciário e Trabalhista.
+3. Áreas de atuação: Família e Previdenciário.
 4. História pessoal: divórcio da Sueli e aposentadoria da mãe.
 5. Princípios: sigilo, linguagem simples e acompanhamento.
 6. Processo: contato, análise, caminhos e condução.

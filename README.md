@@ -12,6 +12,7 @@ Projeto completo da presença digital da advogada Sueli Shimoda: site, identidad
 | `carrosseis/` | Carrosséis para Instagram, com o gerador e as imagens finais. |
 | `docs/` | Direção criativa e prompts usados na criação dos assets. |
 | `briefing.md`, `marca.md`, `LOGO-BRIEFING.md`, `plano-conteudo.md` | Documentação do projeto. |
+| `carrosseis/guia-estrategia-posts.md` | **Régua de copy dos carrosséis:** tipos de gancho, tradução das referências para a advocacia, pilares, banco de ganchos e checklist de conformidade. Ler antes de escrever qualquer post. |
 
 ## Deploy na Vercel
 

@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Carrossel 06 | Demissão e Acordo | Sueli Shimoda Advocacia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --vermelho:#E60000;
+  --salmao:#F49F9F;
+  --preto:#0A0A0A;
+  --branco:#FFFFFF;
+  --azulclaro:#F0F8FB;
+  --cinza:#8F8F8F;
+  --cinza-balao:#8A8A8A;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#6b6b6b;display:flex;flex-direction:column;align-items:center;gap:44px;padding:44px}
+
+.slide{
+  width:1080px;height:1350px;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;padding:56px 62px 46px;
+  font-family:'Archivo',Helvetica,Arial,sans-serif;
+  letter-spacing:-.012em;
+}
+.bg-branco{background:var(--branco);--tinta:var(--preto);--sub:var(--cinza)}
+.bg-preto{background:var(--preto);--tinta:var(--branco);--sub:var(--cinza)}
+.bg-azul{background:var(--azulclaro);--tinta:var(--preto);--sub:var(--cinza)}
+.bg-vermelho{background:var(--vermelho);--tinta:var(--branco);--sub:rgba(255,255,255,.72)}
+
+/* topo e rodape no padrao das referencias */
+.head{display:flex;justify-content:space-between;align-items:baseline;
+  font-size:19px;font-weight:500;color:var(--tinta);letter-spacing:-.005em}
+.head .marca b{font-weight:800}
+.head .marca span{color:var(--sub);font-weight:500}
+
+.corpo{flex:1;display:flex;flex-direction:column;justify-content:center;gap:0}
+
+.pe{display:flex;flex-direction:column;gap:22px}
+.pe-linha{display:flex;justify-content:space-between;font-size:19px;font-weight:500;color:var(--sub)}
+.dots{display:flex;justify-content:center;gap:9px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--sub);opacity:.4}
+.dot.on{background:var(--vermelho);opacity:1}
+
+/* balao de conversa */
+.balao{border-radius:32px;padding:34px 40px;font-size:31px;font-weight:500;line-height:1.34;
+  max-width:800px;letter-spacing:-.01em}
+.balao.rec{background:var(--vermelho);color:var(--branco);border-bottom-left-radius:6px}
+.balao.cinza{background:var(--cinza-balao);color:var(--branco);border-bottom-right-radius:6px;
+  align-self:flex-end;text-align:left}
+
+.selo{display:flex;align-items:center;gap:12px;margin-top:26px;
+  font-size:27px;font-weight:800;color:var(--cinza);letter-spacing:.01em}
+.selo .tick{color:var(--vermelho);font-size:26px;letter-spacing:-.16em}
+
+h2{font-size:56px;font-weight:800;line-height:1.06;letter-spacing:-.032em;color:var(--vermelho)}
+h2.preta{color:var(--tinta)}
+.txt{font-size:29px;font-weight:500;line-height:1.42;color:var(--tinta);margin-top:26px;
+  letter-spacing:-.008em}
+.txt b{font-weight:800}
+.txt i{font-style:italic;font-weight:500}
+.txt + .txt{margin-top:24px}
+
+/* slide centralizado, no padrao da referencia 4 */
+.centro{align-items:center;text-align:center}
+.centro .antes{font-size:33px;font-weight:500;color:var(--tinta);margin-bottom:10px}
+.centro h2{font-size:88px;line-height:1;letter-spacing:-.04em;max-width:900px}
+.centro .cinzao{font-size:31px;font-weight:800;line-height:1.4;color:var(--cinza);
+  max-width:830px;margin-top:40px}
+.centro .fecho{font-size:31px;font-weight:800;line-height:1.35;color:var(--tinta);margin-top:36px}
+
+/* caixa vermelha cheia, no padrao da referencia 5 */
+.caixa{background:var(--vermelho);color:var(--branco);border-radius:34px;padding:44px 52px;
+  font-size:30px;font-weight:500;line-height:1.44;text-align:center;margin-top:40px}
+
+/* lista */
+.lista{margin-top:16px}
+.li{display:flex;gap:26px;align-items:baseline;padding:21px 0;
+  border-bottom:1px solid rgba(255,255,255,.14)}
+.li:last-child{border-bottom:none}
+.li .n{font-size:27px;font-weight:800;color:var(--vermelho);min-width:52px}
+.li .t{font-size:31px;font-weight:600;color:var(--tinta);letter-spacing:-.012em}
+.li .t em{font-style:normal;color:var(--sub);font-weight:500}
+
+/* capa */
+.capa{padding:56px 62px 46px}
+.capa .mark{height:78px;width:auto;display:block;align-self:flex-start;margin-bottom:0}
+.capa .bloco{display:flex;flex-direction:column;align-items:flex-start;margin-top:auto;margin-bottom:104px}
+.capa h1{font-size:110px;font-weight:900;line-height:1.02;letter-spacing:-.045em;color:var(--preto)}
+.capa .hl{background:var(--salmao);padding:2px 18px 8px;display:inline-block}
+.capa .grupo{position:relative;display:inline-block}
+.capa .sub{font-size:42px;font-weight:500;line-height:1.14;color:var(--preto);
+  margin-top:26px;letter-spacing:-.022em;max-width:800px}
+.capa .pill{margin-top:46px;border:2px solid var(--preto);border-radius:999px;
+  padding:19px 34px;font-size:22px;font-weight:500;color:var(--preto);
+  display:inline-flex;align-items:center;gap:70px;align-self:flex-start}
+.capa .pill .seta{color:var(--vermelho);font-size:24px}
+.capa .barra{position:absolute;width:7px;background:var(--vermelho);z-index:3}
+.capa .barra::after{content:'';position:absolute;width:19px;height:19px;border-radius:50%;
+  background:var(--vermelho);left:-6px}
+.capa .barra.esq{left:-19px;top:-16px;height:126px}
+.capa .barra.esq::after{top:-15px}
+.capa .barra.dir{right:-19px;bottom:-16px;height:126px}
+.capa .barra.dir::after{bottom:-15px}
+
+/* cta */
+.cta{align-items:center;text-align:center;justify-content:center}
+.cta h2{color:var(--branco);font-size:76px;line-height:1.02;letter-spacing:-.038em;max-width:880px}
+.cta .btn{margin-top:52px;background:var(--preto);color:var(--branco);border-radius:999px;
+  padding:26px 62px;font-size:24px;font-weight:800;letter-spacing:.02em}
+.cta .selo-final{margin-top:60px;display:flex;flex-direction:column;align-items:center;gap:20px}
+.cta .selo-final img{height:78px;width:auto}
+.cta .selo-final span{font-size:20px;font-weight:600;letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(255,255,255,.9)}
+</style>
+</head>
+<body>
+
+<!-- 01 CAPA -->
+<section class="slide bg-azul capa">
+  <img class="mark" src="imagens/monograma-vermelho.png" alt="Sueli Shimoda Advocacia">
+  <div class="bloco">
+    <h1>O que a empresa</h1>
+    <div class="grupo">
+      <div class="barra esq"></div>
+      <h1><span class="hl">não te conta</span></h1>
+      <h1><span class="hl">na demissão</span></h1>
+      <div class="barra dir"></div>
+    </div>
+    <div class="sub">e que pode custar caro se<br>você assinar com pressa</div>
+    <div class="pill"><span>Arrasta pro lado</span><span class="seta">&rarr;</span></div>
+  </div>
+  <div class="pe">
+    <div class="dots">
+      <span class="dot on"></span><span class="dot"></span><span class="dot"></span>
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</section>
+
+<!-- 02 BALAO + DESESPERO -->
+<section class="slide bg-branco">
+  <header class="head">
+    <span>Sueli Shimoda</span>
+    <span class="marca"><b>Direito</b> <span>Trabalhista</span></span>
+  </header>
+  <div class="corpo">
+    <div class="balao rec">"Assina aqui hoje que a gente resolve rápido. Sem advogado, sem burocracia, sem briga."</div>
+    <div class="selo">PRESSA <span class="tick">&#10003;&#10003;</span></div>
+    <h2>Sabe o que você assina<br>junto com esse papel?</h2>
+    <div class="txt">Não é só <b>"o fim do contrato"</b>.</div>
+    <div class="txt">É também: <i>"concordo com os valores, com as contas e com tudo que a empresa calculou por mim"</i>.</div>
+    <div class="txt">A pressa de hoje costuma ser o direito que não volta amanhã.</div>
+  </div>
+  <div class="pe">
+    <div class="pe-linha"><span>Demissão</span><span>seus direitos</span></div>
+    <div class="dots">
+      <span class="dot"></span><span class="dot on"></span><span class="dot"></span>
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</section>
+
+<!-- 03 CONTRASTE EM DOIS BALOES -->
+<section class="slide bg-preto">
+  <header class="head">
+    <span>Sueli Shimoda</span>
+    <span class="marca"><b>Direito</b> <span>Trabalhista</span></span>
+  </header>
+  <div class="corpo">
+    <div class="balao rec">"A empresa te oferece um acordo"</div>
+    <div class="balao cinza" style="margin-top:26px">"A lei já te garante um direito"</div>
+    <h2 style="margin-top:52px">Acordo e direito não são<br>a mesma coisa.</h2>
+    <div class="txt">Na demissão sem justa causa, a lei já define o que é seu: aviso prévio, 13º, férias com um terço, FGTS com multa de 40% e, cumpridos os requisitos, o seguro-desemprego.</div>
+    <div class="txt">No acordo do artigo 484-A, você troca parte disso por sair mais rápido.</div>
+    <div class="txt"><b>Não existe escolha certa pra todo mundo. Existe escolha informada.</b></div>
+  </div>
+  <div class="pe">
+    <div class="pe-linha"><span>Demissão</span><span>seus direitos</span></div>
+    <div class="dots">
+      <span class="dot"></span><span class="dot"></span><span class="dot on"></span>
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</section>
+
+<!-- 04 CENTRALIZADO, HEADLINE GIGANTE -->
+<section class="slide bg-branco">
+  <header class="head">
+    <span>Sueli Shimoda</span>
+    <span class="marca"><b>Direito</b> <span>Trabalhista</span></span>
+  </header>
+  <div class="corpo centro">
+    <div class="antes">Antes de assinar qualquer papel,</div>
+    <h2>Confira o que já é seu.</h2>
+    <div class="cinzao">Peça o termo de rescisão, o extrato do FGTS e a memória de cálculo das verbas. Compare com o que a lei garante no seu caso. Uma conferência de uma hora pode mudar o valor final.</div>
+    <div class="fecho">Conferir não atrasa nada.<br>Assinar errado, sim.</div>
+  </div>
+  <div class="pe">
+    <div class="pe-linha"><span>Demissão</span><span>seus direitos</span></div>
+    <div class="dots">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="dot on"></span><span class="dot"></span><span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</section>
+
+<!-- 05 LISTA -->
+<section class="slide bg-preto">
+  <header class="head">
+    <span>Sueli Shimoda</span>
+    <span class="marca"><b>Direito</b> <span>Trabalhista</span></span>
+  </header>
+  <div class="corpo">
+    <h2>O que costuma entrar numa<br>demissão sem justa causa.</h2>
+    <div class="lista">
+      <div class="li"><span class="n">01</span><span class="t">Saldo de salário</span></div>
+      <div class="li"><span class="n">02</span><span class="t">Aviso prévio <em>trabalhado ou indenizado</em></span></div>
+      <div class="li"><span class="n">03</span><span class="t">13º proporcional</span></div>
+      <div class="li"><span class="n">04</span><span class="t">Férias vencidas e proporcionais <em>mais um terço</em></span></div>
+      <div class="li"><span class="n">05</span><span class="t">FGTS <em>com multa de 40%</em></span></div>
+      <div class="li"><span class="n">06</span><span class="t">Seguro-desemprego <em>se cumprir os requisitos</em></span></div>
+    </div>
+  </div>
+  <div class="pe">
+    <div class="pe-linha"><span>Demissão</span><span>seus direitos</span></div>
+    <div class="dots">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="dot"></span><span class="dot on"></span><span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</section>
+
+<!-- 06 CAIXA VERMELHA -->
+<section class="slide bg-branco">
+  <header class="head">
+    <span>Sueli Shimoda</span>
+    <span class="marca"><b>Direito</b> <span>Trabalhista</span></span>
+  </header>
+  <div class="corpo centro">
+    <h2 style="font-size:80px">Você pode pedir um prazo pra conferir.</h2>
+    <div class="caixa">Pedir tempo pra revisar o cálculo antes de assinar não é criar problema nem desconfiar de ninguém. É um cuidado normal, e qualquer empresa séria entende isso.</div>
+    <div class="fecho">Quem confere, assina com segurança.</div>
+  </div>
+  <div class="pe">
+    <div class="pe-linha"><span>Demissão</span><span>seus direitos</span></div>
+    <div class="dots">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="dot"></span><span class="dot"></span><span class="dot on"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</section>
+
+<!-- 07 CTA -->
+<section class="slide bg-vermelho">
+  <header class="head">
+    <span>Sueli Shimoda</span>
+    <span class="marca"><b>Direito</b> <span style="color:rgba(255,255,255,.75)">Trabalhista</span></span>
+  </header>
+  <div class="corpo cta">
+    <h2>Recebeu uma proposta de acordo?</h2>
+    <div class="btn">CHAME NO DIRECT</div>
+    <div class="selo-final">
+      <img src="imagens/monograma-branco.png" alt="Sueli Shimoda Advocacia">
+      <span>Sueli Shimoda Advocacia</span>
+    </div>
+  </div>
+  <div class="pe">
+    <div class="pe-linha" style="justify-content:center"><span>Arraste de volta pro início</span></div>
+    <div class="dots">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="dot on"></span>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

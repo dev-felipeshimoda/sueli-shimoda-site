@@ -5,7 +5,12 @@
   "scripts": {
     "render:01": "node 01-apresentacao/render.js",
     "render:02": "node 02-divorcio/render.js",
-    "render:03": "node 03-previdenciario/render.js"
+    "render:03": "node 03-previdenciario/render.js",
+    "render:10": "node 10-aposentadoria-mae-planejamento/render.js",
+    "render:11": "node 11-pensao-maioridade/render.js",
+    "render:12": "node 12-inss-atrasado/render.js",
+    "render:13": "node 13-divorcio-antes-partilha/render.js",
+    "render:nova-sequencia": "npm run render:10 && npm run render:11 && npm run render:12 && npm run render:13"
   },
   "dependencies": {
     "playwright": "^1.62.1"

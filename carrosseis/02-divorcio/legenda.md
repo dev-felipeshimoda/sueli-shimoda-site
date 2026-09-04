@@ -1,27 +1,32 @@
 # Legenda | Carrossel 02, Divórcio
 
-> Instagram e Facebook. Base: texto 3 do `plano-conteudo.md`, aprovado.
+> Instagram e Facebook.
 
 ---
 
-Ninguém casa pensando em se separar, e eu sei muito bem disso porque eu também já passei por um divórcio.
+O jeito mais caro de se divorciar é decidir tudo no impulso.
 
-Quando a gente vive essa dor na pele, entende que não é só uma questão de assinar papéis. É sobre reorganizar a vida, lidar com a frustração, com o medo do futuro e com escolhas que afetam a família inteira.
+Quando o casamento acaba, quase todo mundo quer a mesma coisa: que acabe logo. E é justamente aí que a conta fica cara, porque as decisões tomadas pra encurtar o processo são as que a pessoa carrega por mais tempo.
 
-Foi exatamente passar por esse turbilhão emocional que me fez ter certeza do meu propósito na advocacia. Eu transformei a minha experiência na minha maior força profissional. Hoje, eu ajudo pessoas a passarem por esse momento com a segurança e o amparo legal que faz toda a diferença.
+Separei os três erros que mais aparecem.
 
-Você não precisa atravessar isso no escuro. Como advogada, e como alguém que entende exatamente o que você está sentindo, estou aqui para proteger os seus direitos e a sua paz.
+O primeiro é abrir mão da partilha pra ter paz. Você assina hoje e depois descobre que entregou um bem que levou anos pra construir.
 
-Arraste pro lado pra ver o que realmente entra numa conversa sobre divórcio.
+O segundo é combinar a pensão só na conversa. Acordo de boca não se cobra: enquanto o valor não estiver formalizado e homologado, ele não existe para a Justiça. Quando o pagamento para, começa tudo do zero.
 
-Me mande uma mensagem no direct se você está passando por isso e precisa de orientação segura.
+O terceiro é sair de casa sem combinar nada. E aqui vai um mito que precisa cair: sair de casa não faz você perder a guarda dos filhos. Mas sair sem combinar a convivência cria uma rotina que depois vira argumento do outro lado.
 
-#divorcio #direitodefamilia #advogadadefamilia #pensaoalimenticia #guardadefilhos #partilhadebens #divorcioconsensual #separacao #direitosdamulher #advocaciahumanizada #orientacaojuridica #familia
+O caminho é mais simples do que parece. Antes de assinar qualquer coisa, entenda o regime de bens do seu casamento, saiba o que entra e o que não entra na partilha e formalize o que for combinado sobre os filhos.
+
+Não é sobre brigar. É sobre não decidir com raiva algo que você vai viver por dez anos.
+
+Se você está nessa decisão agora, me chama antes de assinar. A primeira conversa é pra você entender onde está, não pra fechar nada.
+
+#divorcio #direitodefamilia #advogadadefamilia #partilhadebens #pensaoalimenticia #guardadefilhos #divorcioconsensual #separacao #direitosdamulher #advocaciahumanizada #orientacaojuridica #familia
 
 ---
 
 ## Notas
 
-- Texto mantido como a Sueli aprovou, sem travessão.
 - Sem promessa de resultado, dentro do guardrail da OAB.
-- Falta a hashtag da cidade dela.
+- Falta definir a hashtag da cidade dela.

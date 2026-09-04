@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Carrossel 08 | Vínculos ausentes no CNIS | Sueli Shimoda</title>
+<style>
+@font-face{font-family:'Instrument';src:url('fontes/InstrumentSans-Regular.ttf') format('truetype');font-weight:400}
+@font-face{font-family:'Instrument';src:url('fontes/InstrumentSans-Bold.ttf') format('truetype');font-weight:700}
+@font-face{font-family:'Lora';src:url('fontes/Lora-Italic-Variable.ttf') format('truetype');font-style:italic;font-weight:400 700}
+
+:root{
+  --espresso:#241210;
+  --terracota:#603020;
+  --rose:#B68C76;
+  --taupe:#AD9D8E;
+  --editorial:#F3F0EB;
+  --champagne:#B8A078;
+  --tinta:#2A211D;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#807873;display:flex;flex-direction:column;align-items:center;gap:44px;padding:44px}
+.slide{position:relative;width:1080px;height:1350px;overflow:hidden;font-family:'Instrument',Arial,sans-serif;color:var(--tinta)}
+.topo{position:absolute;z-index:6;top:58px;left:64px;right:64px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;font-size:17px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.topo .centro{font-weight:400;opacity:.78}
+.topo .pagina{text-align:right}
+.rodape{position:absolute;z-index:6;left:64px;right:64px;bottom:48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid currentColor;padding-top:18px;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.82}
+.titulo{font-weight:700;letter-spacing:-.06em;line-height:.93}
+.titulo em{font-family:'Lora',Georgia,serif;font-weight:500}
+.texto{font-size:30px;line-height:1.27;letter-spacing:-.026em}
+.seta{font-size:25px;line-height:0}
+
+.s02{background-image:url('imagens/mulher-consultando-cnis.png');background-position:center;background-size:cover}
+.s02::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(36,18,16,.14) 0%,rgba(243,240,235,.02) 38%,rgba(243,240,235,.16) 64%,rgba(243,240,235,.42) 100%)}
+.s02 .topo{color:var(--espresso);text-shadow:0 2px 18px rgba(243,240,235,.95)}
+.s02 .topo span:first-child{color:var(--editorial);text-shadow:0 2px 18px rgba(36,18,16,.88)}
+.s02 .rodape{color:var(--editorial);text-shadow:0 2px 16px rgba(36,18,16,.95)}
+.s02 .conteudo{position:absolute;z-index:3;top:238px;right:64px;width:520px}
+.s02 .titulo{font-size:79px;color:var(--espresso)}
+.s02 .titulo em{display:inline-block;color:var(--terracota);border-bottom:4px solid var(--champagne);padding-bottom:3px}
+.s02 .texto{margin-top:48px;font-size:31px;color:#4E3E37}
+.s02 .texto strong{color:var(--espresso)}
+
+.s03{background:var(--editorial) url('imagens/espaco-branco-notebook-v2.png') center/cover;color:var(--espresso)}
+.s03::after{content:'';position:absolute;top:150px;left:0;width:940px;height:690px;background:linear-gradient(90deg,rgba(243,240,235,.98) 0%,rgba(243,240,235,.96) 82%,rgba(243,240,235,0) 100%)}
+.s03 .conteudo{position:absolute;z-index:3;top:190px;left:92px;right:92px;bottom:118px}
+.s03 .titulo{max-width:790px;font-size:79px}
+.s03 .titulo em{color:var(--terracota)}
+.s03 .lista{margin-top:54px;display:flex;flex-direction:column;align-items:flex-start;gap:15px;font-size:33px;line-height:1.05;color:#4E4039}
+.s03 .lista span{display:inline-block;border-bottom:3px solid var(--terracota);padding-bottom:5px}
+.s03 .lista strong{font-weight:700;color:var(--espresso)}
+.s03 .fecho{margin-top:50px;font-size:32px;line-height:1.2;max-width:590px;color:#3F312B}
+.s03 .fecho strong{color:var(--terracota)}
+.s03 .rodape span:first-child{color:var(--editorial);text-shadow:0 2px 16px rgba(36,18,16,.95)}
+
+.s04{background-image:url('imagens/conferencia-documentos.png');background-position:center;background-size:cover;color:var(--editorial)}
+.s04::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(36,18,16,.35) 0%,rgba(36,18,16,.74) 48%,rgba(36,18,16,.55) 100%)}
+.s04 .conteudo{position:absolute;z-index:3;top:210px;left:72px;right:72px}
+.s04 .titulo{max-width:820px;font-size:96px}
+.s04 .titulo em{color:var(--champagne)}
+.s04 .cartao{margin-top:60px;width:700px;background:rgba(243,240,235,.96);color:var(--espresso);padding:30px 34px 34px;box-shadow:0 22px 64px rgba(0,0,0,.22)}
+.s04 .cartao .texto{font-size:31px}
+.s04 .cartao strong{color:var(--terracota)}
+
+.s05{background:var(--espresso);color:var(--editorial)}
+.s05 .conteudo{position:absolute;top:220px;left:88px;right:88px;bottom:110px;text-align:center}
+.s05 .titulo{font-size:66px;line-height:1.04;max-width:680px;margin:0 auto}
+.s05 .titulo em{color:var(--champagne);display:inline-block;margin:0 .08em}
+.s05 .passos{position:relative;margin-top:82px;height:690px}
+.s05 .passo{position:absolute;background:var(--editorial);color:var(--espresso);padding:20px 28px 22px;font-size:36px;font-weight:700;line-height:1.08;letter-spacing:-.035em;box-shadow:0 14px 34px rgba(0,0,0,.18)}
+.s05 .passo.um{left:0;top:0;width:735px;transform:rotate(-1deg)}
+.s05 .passo.dois{right:-8px;top:218px;width:720px;transform:rotate(1deg)}
+.s05 .passo.tres{left:44px;top:448px;width:740px;transform:rotate(-.6deg)}
+.s05 .conector{position:absolute;left:422px;top:74px;width:178px;height:510px;border:4px solid var(--champagne);border-left:0;border-radius:0 90px 90px 0;opacity:.8}
+.s05 .ponto{position:absolute;left:414px;top:58px;width:20px;height:20px;border-radius:50%;background:var(--champagne)}
+
+.s06{background:var(--editorial);color:var(--espresso)}
+.s06 .foto{position:absolute;inset:0 0 auto;height:550px;background-image:linear-gradient(180deg,rgba(36,18,16,.12),rgba(36,18,16,.35)),url('imagens/conferencia-documentos.png');background-size:cover;background-position:center 69%}
+.s06 .painel{position:absolute;left:0;right:0;top:512px;bottom:0;background:var(--editorial);padding:104px 92px 110px}
+.s06 .painel::before{content:'';position:absolute;top:0;left:92px;width:190px;height:12px;background:var(--terracota)}
+.s06 .titulo{max-width:880px;font-size:82px}
+.s06 .titulo em{color:var(--terracota)}
+.s06 .texto{margin-top:50px;max-width:760px;font-size:38px;line-height:1.14;color:#65564E}
+.s06 .texto + .texto{margin-top:34px;font-size:33px;max-width:770px}
+.s06 .texto strong{color:var(--espresso)}
+.s06 .destaque{text-decoration:underline;text-decoration-color:var(--terracota);text-decoration-thickness:2px;text-underline-offset:8px}
+
+.s07{background-image:linear-gradient(90deg,rgba(36,18,16,.32),rgba(36,18,16,.55) 60%,rgba(36,18,16,.72)),url('imagens/mulher-janela-final-v2.png');background-position:center;background-size:cover;color:var(--editorial)}
+.s07 .conteudo{position:absolute;top:194px;left:82px;right:82px;bottom:112px}
+.s07 .rotulo{font-size:17px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--champagne)}
+.s07 .titulo{margin-top:54px;max-width:880px;font-size:94px}
+.s07 .titulo em{color:var(--champagne)}
+.s07 .linha{width:170px;height:5px;background:var(--champagne);margin:56px 0 48px}
+.s07 .texto{max-width:600px;margin-left:300px;font-size:32px;color:rgba(243,240,235,.86)}
+.s07 .texto strong{color:var(--editorial)}
+.s07 .cta{position:absolute;right:0;bottom:88px;display:flex;align-items:center;gap:26px;color:var(--editorial);font-size:20px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.s07 .cta i{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border:2px solid var(--champagne);border-radius:50%;font-style:normal;color:var(--champagne)}
+</style>
+</head>
+<body>
+
+<section class="slide s02">
+  <header class="topo"><span>Sueli Shimoda</span><span class="centro">Previdenciário</span><span class="pagina">02 / 07</span></header>
+  <div class="conteudo">
+    <h2 class="titulo">O INSS analisa o que está <em>registrado.</em></h2>
+    <p class="texto">O CNIS reúne <strong>vínculos, salários e contribuições.</strong> Se um período não aparece, ele pode ficar fora da análise.</p>
+  </div>
+  <footer class="rodape"><span>Sueli Shimoda | OAB/SP [NÚMERO]</span><span>Arraste <span class="seta">→</span></span></footer>
+</section>
+
+<section class="slide s03">
+  <header class="topo"><span>Sueli Shimoda</span><span class="centro">Previdenciário</span><span class="pagina">03 / 07</span></header>
+  <div class="conteudo">
+    <h2 class="titulo">A diferença pode estar escondida em um <em>detalhe.</em></h2>
+    <div class="lista">
+      <span><strong>Vínculo ausente.</strong></span>
+      <span><strong>Remuneração divergente.</strong></span>
+      <span><strong>Contribuição sem registro correto.</strong></span>
+    </div>
+    <p class="fecho">Isso muda o histórico que o <strong>sistema enxerga.</strong></p>
+  </div>
+  <footer class="rodape"><span>Sueli Shimoda | OAB/SP [NÚMERO]</span><span>Conferência do CNIS</span></footer>
+</section>
+
+<section class="slide s04">
+  <header class="topo"><span>Sueli Shimoda</span><span class="centro">Previdenciário</span><span class="pagina">04 / 07</span></header>
+  <div class="conteudo">
+    <h2 class="titulo">O problema costuma aparecer <em>tarde.</em></h2>
+    <div class="cartao"><p class="texto">Na aposentadoria, o <strong>tempo reconhecido</strong> ou o <strong>valor calculado</strong> podem não coincidir com toda a sua vida de trabalho.</p></div>
+  </div>
+  <footer class="rodape"><span>Sueli Shimoda | OAB/SP [NÚMERO]</span><span>Arraste <span class="seta">→</span></span></footer>
+</section>
+
+<section class="slide s05">
+  <header class="topo"><span>Sueli Shimoda</span><span class="centro">Previdenciário</span><span class="pagina">05 / 07</span></header>
+  <div class="conteudo">
+    <h2 class="titulo">Confira <em>antes</em> de pedir.</h2>
+    <div class="passos">
+      <div class="conector"></div><div class="ponto"></div>
+      <div class="passo um">Baixe o Extrato de Contribuição no Meu INSS.</div>
+      <div class="passo dois">Compare vínculos, períodos e remunerações.</div>
+      <div class="passo tres">Confira com os documentos que você guardou.</div>
+    </div>
+  </div>
+  <footer class="rodape"><span>Sueli Shimoda | OAB/SP [NÚMERO]</span><span>Conferência do CNIS</span></footer>
+</section>
+
+<section class="slide s06">
+  <div class="foto"></div>
+  <header class="topo" style="color:var(--editorial)"><span>Sueli Shimoda</span><span class="centro">Previdenciário</span><span class="pagina">06 / 07</span></header>
+  <div class="painel">
+    <h2 class="titulo">Encontrou uma <em>divergência?</em></h2>
+    <p class="texto"><strong class="destaque">Reúna carteira de trabalho, carnês e outros comprovantes.</strong></p>
+    <p class="texto">A correção depende do tipo de erro e das provas disponíveis.</p>
+  </div>
+  <footer class="rodape"><span>Sueli Shimoda | OAB/SP [NÚMERO]</span><span>Conferência do CNIS</span></footer>
+</section>
+
+<section class="slide s07">
+  <header class="topo"><span>Sueli Shimoda</span><span class="centro">Previdenciário</span><span class="pagina">07 / 07</span></header>
+  <div class="conteudo">
+    <div class="rotulo">O melhor momento para conferir</div>
+    <h2 class="titulo">Antecipar a conferência evita decisões no <em>escuro.</em></h2>
+    <div class="linha"></div>
+    <p class="texto">Cada histórico exige análise individual. <strong>Salve este post</strong> e procure orientação se encontrar diferenças no CNIS.</p>
+    <div class="cta"><i>→</i><span>Conteúdo informativo</span></div>
+  </div>
+  <footer class="rodape"><span>Sueli Shimoda | OAB/SP [NÚMERO]</span><span>Previdenciário</span></footer>
+</section>
+
+</body>
+</html>

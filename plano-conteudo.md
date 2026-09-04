@@ -10,7 +10,7 @@ Convergência entre o feedback da Sueli e a análise do material:
 - A imagem leva a FOTO REAL da Sueli e um título curto e forte.
 - O corpo do texto vai na LEGENDA, não na arte.
 - Mistura pessoal e profissional, com histórias reais dela.
-- Tom acolhedor e sóbrio. Sem prometer resultado (OAB).
+- Tom acolhedor e sóbrio. Sem prometer resultado, sem superlativo, sem preço. Guardrails de publicidade jurídica (Código de Ética da OAB, Provimento 205/2021, TED) em `briefing.md`.
 
 ## Backlog
 
@@ -20,6 +20,9 @@ Convergência entre o feedback da Sueli e a análise do material:
 | 2 | Comunicado de número novo | aguardando o número |
 | 3 | Divórcio: "A dor que me fez escolher lutar por você" | carrossel pronto em `carrosseis/02-divorcio/`, faltam as imagens de apoio |
 | 4 | Previdenciário: "Como a aposentadoria da minha mãe mudou o meu trabalho" | carrossel pronto em `carrosseis/03-previdenciario/`, faltam as imagens de apoio |
+| 5 | Família: "Pensão atrasada não é falta de sorte. É direito negado." | carrossel pronto em `carrosseis/04-pensao-alimenticia/`, PNGs renderizados, falta colar `img-rotina-escola.png` |
+| 6 | Família (estilo viral): "7 sinais de que chegou a hora de rever sua pensão" | carrossel pronto em `carrosseis/05-revisao-pensao/`, PNGs renderizados |
+| 7 | Família (editorial): "7 sinais para rever a pensão", mesmo conteúdo do post 6 em outra linha visual | carrossel pronto em `carrosseis/07-revisao-pensao-editorial/`, PNGs renderizados |
 
 ---
 
@@ -67,6 +70,10 @@ Está na hora de planejar a sua aposentadoria ou a de alguém que você ama? Cli
 
 Os posts 1, 3 e 4 viraram carrossel de 6 slides em `carrosseis/`. Cada pasta tem o roteiro,
 os prompts de imagem, o HTML, o render e a legenda. Detalhe do sistema visual em `carrosseis/README.md`.
+
+O carrossel 5 (`04-pensao-alimenticia/`) é um novo ângulo de Família, sem gancho pessoal registrado
+no briefing (diferente do divórcio). Foco direto na dor: pensão atrasada, valor incompatível e
+necessidade de revisão.
 
 A regra combinada foi mantida: máximo 25 palavras por slide, uma ideia por slide, corpo do texto
 na legenda. A foto da Sueli aparece só no carrossel de apresentação.

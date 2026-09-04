@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Carrossel 11 | Pensão após os 18 anos | Sueli Shimoda</title>
+  <link rel="stylesheet" href="../_editorial-referencias.css">
+  <style>
+    .c11 .frame { display: none; }
+
+    .c11-s1::before {
+      content: "18";
+      position: absolute;
+      z-index: 0;
+      top: 120px;
+      right: -30px;
+      font-family: "Lora Local", Georgia, serif;
+      font-size: 520px;
+      line-height: 1;
+      font-style: italic;
+      color: transparent;
+      -webkit-text-stroke: 3px rgba(184, 160, 120, .28);
+    }
+    .c11-s1 .content {
+      justify-content: flex-end;
+      padding-bottom: 125px;
+    }
+    .c11-s1 .display {
+      max-width: 780px;
+      font-size: 100px;
+    }
+    .c11-s1 .note {
+      max-width: 510px;
+      margin-left: auto;
+      text-align: right;
+    }
+
+    .c11-s2::before {
+      content: "18";
+      position: absolute;
+      left: 28px;
+      top: 270px;
+      font-family: "Lora Local", Georgia, serif;
+      font-size: 360px;
+      line-height: .8;
+      font-style: italic;
+      color: rgba(96, 48, 32, .13);
+      transform: rotate(-90deg) translateX(-100%);
+      transform-origin: left top;
+    }
+    .c11-s2 .content {
+      width: 660px;
+      margin-left: auto;
+      justify-content: flex-start;
+      padding-top: 250px;
+    }
+    .c11-s2 .display {
+      font-size: 72px;
+      line-height: 1.02;
+    }
+    .c11-s2 .bodycopy {
+      margin-top: 90px;
+      padding-left: 180px;
+      font-size: 29px;
+    }
+    .c11-s2 .corner-number { display: none; }
+
+    .c11-s3::before {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      left: 0;
+      right: 0;
+      top: 535px;
+      height: 170px;
+      background: var(--rose);
+    }
+    .c11-s3 .content {
+      justify-content: space-between;
+      padding-top: 170px;
+      padding-bottom: 130px;
+    }
+    .c11-s3 .display {
+      max-width: 890px;
+      font-size: 96px;
+    }
+    .c11-s3 .accent {
+      background: var(--branco);
+      color: var(--espresso);
+    }
+    .c11-s3 .bodycopy {
+      width: 520px;
+      margin-left: auto;
+      text-align: right;
+      font-size: 34px;
+    }
+
+    .c11-s4 .content {
+      display: block;
+      padding-top: 185px;
+    }
+    .c11-s4 .content::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 350px;
+      width: 2px;
+      height: 230px;
+      background: color-mix(in srgb, var(--terracota) 50%, transparent);
+    }
+    .c11-s4 .eyebrow {
+      text-align: center;
+    }
+    .c11-s4 .display {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 43px;
+      line-height: 1.13;
+    }
+    .c11-s4 .accent {
+      display: block;
+      margin: 355px -110px 0;
+      padding: 0;
+      background: transparent;
+      color: var(--terracota);
+      font-size: 108px;
+      line-height: .9;
+    }
+    .c11-s4 .bodycopy {
+      position: absolute;
+      right: 0;
+      bottom: 90px;
+      width: 440px;
+      text-align: right;
+      font-size: 29px;
+    }
+
+    .c11-s5::before {
+      content: "18";
+      position: absolute;
+      right: 60px;
+      top: 90px;
+      font-family: "Lora Local", Georgia, serif;
+      font-size: 250px;
+      line-height: 1;
+      font-style: italic;
+      color: rgba(96, 48, 32, .16);
+    }
+    .c11-s5 .content {
+      justify-content: flex-end;
+      padding-bottom: 140px;
+    }
+    .c11-s5 .display {
+      max-width: 760px;
+      font-size: 84px;
+    }
+    .c11-s5 .bodycopy {
+      width: 390px;
+      margin: 80px 0 0 auto;
+      padding-top: 24px;
+      border-top: 3px solid var(--terracota);
+      text-align: right;
+      font-size: 30px;
+    }
+
+    .c11-s6 .content {
+      display: block;
+      padding-top: 170px;
+    }
+    .c11-s6 .content::before {
+      content: "";
+      position: absolute;
+      inset: 125px 20px 120px 20px;
+      border-top: 2px solid rgba(184, 160, 120, .7);
+      border-right: 2px solid rgba(184, 160, 120, .7);
+      border-radius: 0 34px 0 0;
+    }
+    .c11-s6 .eyebrow {
+      position: relative;
+      width: 420px;
+    }
+    .c11-s6 .bodycopy {
+      position: absolute;
+      top: 310px;
+      left: 0;
+      width: 440px;
+      font-size: 30px;
+    }
+    .c11-s6 .display {
+      position: absolute;
+      right: 0;
+      bottom: 100px;
+      max-width: 770px;
+      text-align: right;
+      font-size: 84px;
+    }
+
+    .c11-s7 {
+      background: linear-gradient(180deg, var(--branco) 0 42%, var(--espresso) 42%);
+    }
+    .c11-s7::before {
+      content: "18";
+      position: absolute;
+      z-index: 0;
+      top: 65px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: "Lora Local", Georgia, serif;
+      font-size: 380px;
+      line-height: .9;
+      font-style: italic;
+      color: rgba(96, 48, 32, .18);
+    }
+    .c11-s7 .topbar { color: var(--espresso); }
+    .c11-s7 .page { color: var(--terracota); }
+    .c11-s7 .content {
+      justify-content: flex-start;
+      padding-top: 540px;
+      color: var(--branco);
+    }
+    .c11-s7 .display {
+      max-width: 860px;
+      font-size: 78px;
+    }
+    .c11-s7 .bodycopy {
+      max-width: 520px;
+      margin-left: auto;
+      text-align: right;
+      font-size: 29px;
+    }
+    .c11-s7 .pill {
+      margin-left: auto;
+      background: var(--rose);
+      border: 0;
+      color: var(--espresso);
+    }
+    .c11-s7 .footer { color: var(--branco); }
+  </style>
+</head>
+<body>
+
+<section class="slide theme-terracotta texture c11 c11-s1">
+  <div class="frame"></div>
+  <header class="topbar">
+    <span class="brand">Sueli Shimoda | <strong>Advocacia</strong></span>
+    <span class="page">01 / 07</span>
+  </header>
+  <div class="content">
+    <p class="eyebrow">Uma crença que precisa ser revista</p>
+    <h1 class="display xl">A pensão <span class="accent accent-light">não acaba</span> quando o filho faz 18 anos.</h1>
+    <p class="note">A maioridade muda a análise. Ela não cancela a obrigação sozinha.</p>
+  </div>
+  <footer class="footer"><span class="legal-pending">Sueli Shimoda | OAB/UF [NÚMERO]</span><span class="swipe">Entenda <span class="arrow">→</span></span></footer>
+</section>
+
+<section class="slide theme-light texture c11 c11-s2">
+  <header class="topbar">
+    <span class="brand">Sueli Shimoda | <strong>Advocacia</strong></span>
+    <span class="page">02 / 07</span>
+  </header>
+  <div class="content">
+    <p class="eyebrow">O erro mais comum</p>
+    <h2 class="display lg">Muita gente <span class="serif">interrompe o pagamento</span> no mês seguinte ao aniversário,</h2>
+    <p class="bodycopy mt-36">como se a obrigação tivesse terminado sozinha.</p>
+  </div>
+  <span class="corner-number">18</span>
+  <footer class="footer"><span class="legal-pending">Sueli Shimoda | OAB/UF [NÚMERO]</span><span>Direito de Família</span></footer>
+</section>
+
+<section class="slide theme-dark texture c11 c11-s3">
+  <header class="topbar">
+    <span class="brand">Sueli Shimoda | <strong>Advocacia</strong></span>
+    <span class="page">03 / 07</span>
+  </header>
+  <div class="content">
+    <p class="eyebrow">O que realmente muda</p>
+    <h2 class="display xl">A maioridade encerra o <span class="accent accent-rose">poder familiar,</span></h2>
+    <p class="bodycopy mt-48">mas não extingue automaticamente a obrigação alimentar.</p>
+  </div>
+  <footer class="footer"><span class="legal-pending">Sueli Shimoda | OAB/UF [NÚMERO]</span><span class="swipe">Continue <span class="arrow">→</span></span></footer>
+</section>
+
+<section class="slide theme-light texture c11 c11-s4">
+  <div class="frame"></div>
+  <header class="topbar">
+    <span class="brand">Sueli Shimoda | <strong>Advocacia</strong></span>
+    <span class="page">04 / 07</span>
+  </header>
+  <div class="content">
+    <p class="eyebrow">Não é um cancelamento automático</p>
+    <h2 class="display sm">Para cancelar pensão fixada judicialmente, é necessária uma <span class="accent accent-terracotta">decisão judicial,</span></h2>
+    <p class="bodycopy mt-36">com oportunidade para o filho se manifestar.</p>
+  </div>
+  <footer class="footer"><span class="legal-pending">Sueli Shimoda | OAB/UF [NÚMERO]</span><span>Súmula 358 do STJ</span></footer>
+</section>
+
+<section class="slide theme-taupe texture c11 c11-s5">
+  <header class="topbar">
+    <span class="brand">Sueli Shimoda | <strong>Advocacia</strong></span>
+    <span class="page">05 / 07</span>
+  </header>
+  <div class="content">
+    <p class="eyebrow">A discussão muda de lugar</p>
+    <h2 class="display lg">Depois dos 18, o juiz avalia <span class="underline">necessidade</span> de quem recebe</h2>
+    <p class="bodycopy mt-36">e possibilidade de quem paga.</p>
+  </div>
+  <footer class="footer"><span class="legal-pending">Sueli Shimoda | OAB/UF [NÚMERO]</span><span>Direito de Família</span></footer>
+</section>
+
+<section class="slide theme-terracotta texture c11 c11-s6">
+  <header class="topbar">
+    <span class="brand">Sueli Shimoda | <strong>Advocacia</strong></span>
+    <span class="page">06 / 07</span>
+  </header>
+  <div class="content">
+    <p class="eyebrow">O caminho responsável</p>
+    <h2 class="display sm">O caminho seguro é pedir a <span class="accent accent-dark">exoneração ou revisão.</span></h2>
+    <p class="bodycopy mt-48">Parar de pagar por conta própria pode gerar cobrança da dívida.</p>
+  </div>
+  <footer class="footer"><span class="legal-pending">Sueli Shimoda | OAB/UF [NÚMERO]</span><span class="swipe">Continue <span class="arrow">→</span></span></footer>
+</section>
+
+<section class="slide theme-light texture c11 c11-s7">
+  <header class="topbar">
+    <span class="brand">Sueli Shimoda | <strong>Advocacia</strong></span>
+    <span class="page">07 / 07</span>
+  </header>
+  <div class="frame"></div>
+  <div class="content max-760">
+    <p class="eyebrow">Antes de interromper</p>
+    <h2 class="display sm">A idade muda a análise, <span class="accent accent-rose">não substitui a decisão.</span></h2>
+    <p class="bodycopy mt-36">Salve este conteúdo e procure orientação para avaliar o caso.</p>
+    <span class="pill">Salve para consultar</span>
+  </div>
+  <footer class="footer"><span class="legal-pending">Sueli Shimoda | OAB/UF [NÚMERO]</span><span>Conteúdo informativo</span></footer>
+</section>
+
+</body>
+</html>

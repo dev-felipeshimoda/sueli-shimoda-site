@@ -1,28 +1,28 @@
-# Legenda | Carrossel 01, Apresentação
+# Legenda | Carrossel 01, Minha história
 
-> Instagram e Facebook. Copiar do bloco abaixo.
+> Instagram e Facebook. Post de apresentação, abre o perfil.
 
 ---
 
-Prazer, eu sou a Sueli.
+Eu sabia a lei. E mesmo assim me senti perdida.
 
-Advogo em Direito de Família, Previdenciário e Trabalhista, e vou ser honesta com você sobre o motivo de eu estar aqui.
+Foi no meu próprio divórcio. Eu era advogada, conhecia os prazos, sabia os nomes de tudo, e ainda assim passei noites sem entender o que ia acontecer com a minha casa, com o meu dinheiro e com a minha rotina. O que doía não era o processo. Era o escuro.
 
-Antes de atender essas causas, eu vivi duas delas. Passei por um divórcio e sei o que é reorganizar a vida inteira enquanto tudo parece fora do lugar. Acompanhei de perto a aposentadoria da minha mãe e vi como a burocracia consegue cansar uma família.
+Alguns anos depois veio a aposentadoria da minha mãe. Papelada que não acabava, regra que mudava no meio do caminho e o medo dela perder o benefício depois de uma vida inteira de trabalho. A mesma angústia, agora dentro de casa.
 
-Foi isso que definiu o meu jeito de trabalhar. Eu escuto antes de falar de processo. Explico cada etapa em português claro, porque você merece entender o que está acontecendo com a sua própria vida.
+Foi ali que a ficha caiu: o problema quase nunca é a lei. É a falta de tradução. Advogado que não explica deixa a pessoa sozinha no meio do próprio caso.
 
-Este perfil nasce pra isso: falar de direito de um jeito que dá pra entender, sem juridiquês e sem promessa fácil.
+Por isso eu trabalho assim. Escuto a história inteira antes de falar de processo, explico cada etapa em português e você entende o que está acontecendo com a sua própria vida.
 
-Arraste pro lado pra conhecer as áreas em que eu atuo.
+Hoje eu atuo em Direito de Família e Previdenciário. Divórcio, pensão, guarda e partilha. Aposentadoria, pensão por morte, auxílio e BPC.
 
-Se você está passando por alguma dessas situações e quer orientação, me chame no direct.
+Se você está nesse lugar agora, me manda uma mensagem. A primeira coisa que eu faço é te explicar onde você está.
 
-#direitodefamilia #direitoprevidenciario #direitotrabalhista #advogadadefamilia #divorcio #pensaoalimenticia #guardadefilhos #aposentadoria #inss #bpcloas #direitosdotrabalhador #advocaciahumanizada
+#direitodefamilia #direitoprevidenciario #advogadadefamilia #divorcio #pensaoalimenticia #guardadefilhos #partilhadebens #aposentadoria #inss #bpcloas #pensaopormorte #advocaciahumanizada #orientacaojuridica
 
 ---
 
 ## Notas
 
-- Sem promessa de resultado, dentro do guardrail da OAB.
-- Falta definir a hashtag da cidade dela. Quando o Felipe confirmar, entra no fim da lista.
+- Sem promessa de resultado, dentro dos guardrails de publicidade jurídica da OAB (ver `../../briefing.md`).
+- Falta definir a hashtag da cidade dela.

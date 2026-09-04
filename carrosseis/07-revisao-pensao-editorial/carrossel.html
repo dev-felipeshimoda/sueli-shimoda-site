@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Carrossel 07 | 7 Sinais para Rever a Pensão | Sueli Shimoda Advocacia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --escuro:#3A3128;
+  --parede:#7D6F5F;
+  --taupe:#BAAE9E;
+  --creme:#EFEAE2;
+  --luz:#F2EFEC;
+  --madeira:#4A3728;
+  --grafite:#181614;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#6b6b6b;display:flex;flex-direction:column;align-items:center;gap:44px;padding:44px}
+
+.slide{
+  width:1080px;height:1350px;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;padding:60px 78px 62px;
+  font-family:'Archivo',Helvetica,Arial,sans-serif;
+}
+.slide .foto{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.slide .veu{position:absolute;inset:0;z-index:1;pointer-events:none}
+.slide > *:not(.foto):not(.veu){position:relative;z-index:2}
+
+/* fundos de reserva, no clima da capa: luz de janela em ambiente quente */
+.f-escuro{background:
+  radial-gradient(120% 80% at 88% 8%, rgba(242,239,236,.34) 0%, rgba(242,239,236,0) 52%),
+  linear-gradient(158deg, #4A3F33 0%, #3A3128 46%, #2A231C 100%);
+  --tinta:#F4F1EC;--fraca:rgba(244,241,236,.76);--fio:rgba(244,241,236,.28)}
+.f-parede{background:
+  radial-gradient(110% 70% at 92% 12%, rgba(255,255,255,.42) 0%, rgba(255,255,255,0) 55%),
+  linear-gradient(160deg, #8D8070 0%, #7D6F5F 52%, #6A5D4E 100%);
+  --tinta:#F6F3EE;--fraca:rgba(246,243,238,.80);--fio:rgba(246,243,238,.30)}
+.f-creme{background:
+  radial-gradient(100% 66% at 86% 6%, rgba(255,255,255,.9) 0%, rgba(255,255,255,0) 58%),
+  linear-gradient(162deg, #F4F1EA 0%, #EFEAE2 48%, #E2DBCF 100%);
+  --tinta:#221D18;--fraca:rgba(34,29,24,.72);--fio:rgba(34,29,24,.26)}
+.f-taupe{background:
+  radial-gradient(105% 68% at 10% 4%, rgba(255,255,255,.5) 0%, rgba(255,255,255,0) 56%),
+  linear-gradient(158deg, #C8BCAC 0%, #BAAE9E 50%, #A2957F 100%);
+  --tinta:#211C17;--fraca:rgba(33,28,23,.74);--fio:rgba(33,28,23,.28)}
+.f-madeira{background:
+  radial-gradient(120% 74% at 84% 92%, rgba(240,225,200,.28) 0%, rgba(240,225,200,0) 56%),
+  linear-gradient(150deg, #5C4433 0%, #4A3728 54%, #33241A 100%);
+  --tinta:#F4EFE7;--fraca:rgba(244,239,231,.78);--fio:rgba(244,239,231,.30)}
+
+/* grao sutil, pra nao parecer gradiente chapado de template */
+.grao{position:absolute;inset:0;z-index:1;opacity:.16;pointer-events:none;
+  background-image:radial-gradient(rgba(255,255,255,.5) 1px, transparent 1px),
+                   radial-gradient(rgba(0,0,0,.4) 1px, transparent 1px);
+  background-size:5px 5px, 7px 7px;background-position:0 0, 3px 4px}
+
+/* topo igual ao da capa */
+.head{text-align:center;font-size:22px;font-weight:500;color:var(--tinta);
+  letter-spacing:.005em;opacity:.94}
+
+.corpo{flex:1;display:flex;flex-direction:column;justify-content:center}
+
+/* bloco de titulo: pesos misturados na mesma escala, como nas referencias */
+.tit{font-size:70px;font-weight:800;line-height:1.06;letter-spacing:-.035em;color:var(--tinta)}
+.tit .leve{font-weight:400;letter-spacing:-.028em}
+.tit .ital{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:500;
+  letter-spacing:-.005em}
+.tit.menor{font-size:60px}
+
+.corpo p{font-size:32px;font-weight:400;line-height:1.38;color:var(--fraca);
+  letter-spacing:-.018em;margin-top:34px;max-width:840px}
+.corpo p b{font-weight:700;color:var(--tinta)}
+.corpo p .sub{border-bottom:2px solid var(--tinta);padding-bottom:3px;color:var(--tinta);font-weight:500}
+
+.fio{width:100%;height:1px;background:var(--fio);margin:38px 0 0}
+
+/* sinais numerados, com o filete fino da capa */
+.sinais{margin-top:26px}
+.sinal{padding:28px 0;border-top:1px solid var(--fio);display:flex;gap:30px;align-items:baseline}
+.sinal:last-child{border-bottom:1px solid var(--fio)}
+.sinal .n{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:500;
+  font-size:44px;color:var(--tinta);min-width:74px;opacity:.85}
+.sinal .txt{flex:1}
+.sinal .txt .a{font-size:39px;font-weight:700;line-height:1.13;letter-spacing:-.028em;color:var(--tinta)}
+.sinal .txt .b{font-size:26px;font-weight:400;line-height:1.36;color:var(--fraca);
+  letter-spacing:-.012em;margin-top:9px}
+
+/* rodape */
+.pe{display:flex;justify-content:space-between;align-items:center;
+  font-size:20px;font-weight:500;color:var(--fraca);letter-spacing:.02em}
+.pe .cont{letter-spacing:.16em}
+
+/* capa full bleed, imagem ja finalizada */
+.capa{padding:0}
+.capa img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* cta */
+.cta{align-items:flex-start}
+.cta .tit{font-size:76px}
+.cta .botao{margin-top:52px;border:1.5px solid var(--tinta);border-radius:999px;
+  padding:24px 56px;font-size:23px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--tinta)}
+.cta .assina{margin-top:64px;font-size:21px;font-weight:500;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--fraca)}
+</style>
+</head>
+<body>
+
+<!-- 01 CAPA (arte final fornecida, usada como veio) -->
+<section class="slide capa">
+  <img src="imagens/capa-pensao.jpg" alt="Sueli Shimoda, Direito de Família — 7 sinais de que chegou a hora de rever sua pensão">
+</section>
+
+<!-- 02 ABERTURA -->
+<section class="slide f-escuro">
+  <div class="foto" style="background-image:url('imagens/foto-02-janela.jpg')"></div>
+  <div class="veu" style="background:linear-gradient(155deg,rgba(58,49,40,.82) 0%,rgba(42,35,28,.90) 100%)"></div>
+  <div class="grao"></div>
+  <div class="head">Sueli Shimoda | Direito de Família</div>
+  <div class="corpo">
+    <div class="tit">Muita gente acha<br>que o valor da pensão<br><span class="ital">é para sempre.</span><br><span class="leve">Não é.</span></div>
+    <p>A pensão alimentícia pode ser revista <span class="sub">sempre que a realidade muda</span>, seja a renda de quem paga, seja a necessidade de quem recebe.</p>
+    <p>O problema é que quase ninguém sabe reconhecer a hora certa de olhar pra esse valor de novo.</p>
+  </div>
+  <div class="pe"><span>Revisão de pensão</span><span class="cont">02 / 08</span></div>
+</section>
+
+<!-- 03 SINAIS 01 A 03 -->
+<section class="slide f-creme">
+  <div class="foto" style="background-image:url('imagens/foto-03-mesa.jpg')"></div>
+  <div class="veu" style="background:linear-gradient(160deg,rgba(244,241,234,.90) 0%,rgba(226,219,207,.93) 100%)"></div>
+  <div class="grao" style="opacity:.10"></div>
+  <div class="head">Sueli Shimoda | Direito de Família</div>
+  <div class="corpo">
+    <div class="tit menor">Os primeiros <span class="ital">três sinais</span></div>
+    <div class="sinais">
+      <div class="sinal">
+        <div class="n">01</div>
+        <div class="txt">
+          <div class="a">Já se passaram anos desde o último valor combinado.</div>
+          <div class="b">A vida mudou, mas o valor continuou o mesmo.</div>
+        </div>
+      </div>
+      <div class="sinal">
+        <div class="n">02</div>
+        <div class="txt">
+          <div class="a">Quem paga teve um aumento real de renda.</div>
+          <div class="b">O que foi combinado antes pode não refletir a capacidade de hoje.</div>
+        </div>
+      </div>
+      <div class="sinal">
+        <div class="n">03</div>
+        <div class="txt">
+          <div class="a">Quem paga perdeu o emprego ou teve a renda reduzida.</div>
+          <div class="b">Também é motivo de revisão, e vale para os dois lados.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pe"><span>Revisão de pensão</span><span class="cont">03 / 08</span></div>
+</section>
+
+<!-- 04 SINAIS 04 E 05 -->
+<section class="slide f-taupe">
+  <div class="foto" style="background-image:url('imagens/foto-04-caderno.jpg')"></div>
+  <div class="veu" style="background:linear-gradient(158deg,rgba(200,188,172,.90) 0%,rgba(162,149,127,.92) 100%)"></div>
+  <div class="grao" style="opacity:.12"></div>
+  <div class="head">Sueli Shimoda | Direito de Família</div>
+  <div class="corpo">
+    <div class="tit menor">Os que passam <span class="ital">despercebidos</span></div>
+    <div class="sinais">
+      <div class="sinal">
+        <div class="n">04</div>
+        <div class="txt">
+          <div class="a">As necessidades da criança mudaram.</div>
+          <div class="b">Escola, saúde e terapia entram nessa conta.</div>
+        </div>
+      </div>
+      <div class="sinal">
+        <div class="n">05</div>
+        <div class="txt">
+          <div class="a">O valor foi fixado sem considerar todos os gastos.</div>
+          <div class="b">Um cálculo malfeito no início pesa por anos.</div>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:30px">Nenhum dos dois aparece de uma vez. Vão aparecendo aos poucos, até virar rotina.</p>
+  </div>
+  <div class="pe"><span>Revisão de pensão</span><span class="cont">04 / 08</span></div>
+</section>
+
+<!-- 05 SINAIS 06 E 07 -->
+<section class="slide f-parede">
+  <div class="foto" style="background-image:url('imagens/foto-05-parede.jpg')"></div>
+  <div class="veu" style="background:linear-gradient(160deg,rgba(141,128,112,.86) 0%,rgba(106,93,78,.92) 100%)"></div>
+  <div class="grao"></div>
+  <div class="head">Sueli Shimoda | Direito de Família</div>
+  <div class="corpo">
+    <div class="tit menor">E os <span class="ital">dois últimos</span></div>
+    <div class="sinais">
+      <div class="sinal">
+        <div class="n">06</div>
+        <div class="txt">
+          <div class="a">Nasceu outro filho de quem paga a pensão.</div>
+          <div class="b">Isso muda a capacidade financeira dele e pode ser revisto.</div>
+        </div>
+      </div>
+      <div class="sinal">
+        <div class="n">07</div>
+        <div class="txt">
+          <div class="a">O valor está parado há anos, mas o custo de vida não.</div>
+          <div class="b">Pensão congelada enquanto tudo em volta fica mais caro.</div>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:30px">Se um deles é a sua situação, <b>já vale conversar.</b></p>
+  </div>
+  <div class="pe"><span>Revisão de pensão</span><span class="cont">05 / 08</span></div>
+</section>
+
+<!-- 06 OS DOIS LADOS -->
+<section class="slide f-creme">
+  <div class="foto" style="background-image:url('imagens/foto-06-luz.jpg')"></div>
+  <div class="veu" style="background:linear-gradient(160deg,rgba(246,244,238,.92) 0%,rgba(228,221,209,.94) 100%)"></div>
+  <div class="grao" style="opacity:.10"></div>
+  <div class="head">Sueli Shimoda | Direito de Família</div>
+  <div class="corpo">
+    <div class="tit">A revisão vale<br><span class="ital">para os dois lados.</span></div>
+    <p>Quem recebe pode pedir aumento quando a necessidade cresce. <b>Quem paga também pode pedir redução</b> quando a renda cai de verdade.</p>
+    <p>Não é uma disputa sobre quem tem razão. É ajustar um valor à vida que as duas partes têm hoje.</p>
+    <div class="fio"></div>
+  </div>
+  <div class="pe"><span>Revisão de pensão</span><span class="cont">06 / 08</span></div>
+</section>
+
+<!-- 07 O QUE REUNIR -->
+<section class="slide f-escuro">
+  <div class="foto" style="background-image:url('imagens/foto-07-documentos.jpg')"></div>
+  <div class="veu" style="background:linear-gradient(155deg,rgba(58,49,40,.84) 0%,rgba(42,35,28,.92) 100%)"></div>
+  <div class="grao"></div>
+  <div class="head">Sueli Shimoda | Direito de Família</div>
+  <div class="corpo">
+    <div class="tit menor">O que reunir <span class="ital">antes de conversar</span></div>
+    <div class="sinais">
+      <div class="sinal">
+        <div class="n">i</div>
+        <div class="txt"><div class="a">O acordo ou a sentença que fixou o valor</div></div>
+      </div>
+      <div class="sinal">
+        <div class="n">ii</div>
+        <div class="txt"><div class="a">Comprovantes das despesas da criança hoje</div></div>
+      </div>
+      <div class="sinal">
+        <div class="n">iii</div>
+        <div class="txt"><div class="a">O que você souber sobre a renda atual de quem paga</div></div>
+      </div>
+    </div>
+    <p style="margin-top:30px">Com isso em mãos, a conversa deixa de ser sobre impressão e passa a ser sobre fato.</p>
+  </div>
+  <div class="pe"><span>Revisão de pensão</span><span class="cont">07 / 08</span></div>
+</section>
+
+<!-- 08 CTA -->
+<section class="slide f-madeira">
+  <div class="foto" style="background-image:url('imagens/foto-08-escritorio.jpg')"></div>
+  <div class="veu" style="background:linear-gradient(150deg,rgba(92,68,51,.86) 0%,rgba(51,36,26,.93) 100%)"></div>
+  <div class="grao"></div>
+  <div class="head">Sueli Shimoda | Direito de Família</div>
+  <div class="corpo cta">
+    <div class="tit">Reconheceu algum<br>desses sinais na<br><span class="ital">sua rotina?</span></div>
+    <p>Me manda uma mensagem e a gente olha esse valor com calma, sem compromisso.</p>
+    <div class="botao">Chame no direct</div>
+    <div class="assina">Sueli Shimoda Advocacia</div>
+  </div>
+  <div class="pe"><span>Revisão de pensão</span><span class="cont">08 / 08</span></div>
+</section>
+
+</body>
+</html>

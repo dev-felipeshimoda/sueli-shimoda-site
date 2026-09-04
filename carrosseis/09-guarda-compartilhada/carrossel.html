@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Carrossel 09 | Guarda Compartilhada | Sueli Shimoda Advocacia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Condensed:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* Linha editorial da capa fornecida: tipografia condensada pesada, uma ideia por
+   slide, muito respiro. As cores sao as seis oficiais da marca, nenhuma cor nova.
+   A capa e a foto ja aprovada, salva direto em instagram/slide-01.png. */
+:root{
+  --terracota:#603020;
+  --espresso:#241210;
+  --rose:#B68C76;
+  --taupe:#AD9D8E;
+  --branco:#F3F0EB;
+  --champagne:#B8A078;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#6b6b6b;display:flex;flex-direction:column;align-items:center;gap:44px;padding:44px;
+  font-family:'Roboto Condensed',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+
+.slide{position:relative;width:1080px;height:1350px;overflow:hidden;
+  display:flex;flex-direction:column;padding:84px 88px 78px}
+
+/* fundos: terracota domina, espresso da profundidade, branco editorial abre
+   respiro e o taupe entra como transicao. Dois slides seguidos nunca repetem. */
+.f-espresso{background:var(--espresso);color:var(--branco);
+  --ac:var(--champagne);--destaque:var(--rose)}
+.f-branco{background:var(--branco);color:var(--espresso);
+  --ac:var(--terracota);--destaque:var(--terracota)}
+.f-taupe{background:var(--taupe);color:var(--espresso);
+  --ac:var(--terracota);--destaque:var(--terracota)}
+.f-terracota{background:var(--terracota);color:var(--branco);
+  --ac:var(--champagne);--destaque:var(--espresso)}
+
+.grao{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(115% 80% at 10% -5%, rgba(255,255,255,.055), rgba(0,0,0,0) 62%)}
+.f-branco .grao,.f-taupe .grao{
+  background:radial-gradient(115% 80% at 10% -5%, rgba(36,18,16,.05), rgba(0,0,0,0) 62%)}
+.f-terracota .grao{
+  background:radial-gradient(115% 80% at 10% -5%, rgba(255,255,255,.085), rgba(0,0,0,0) 62%)}
+
+.topo{display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:2}
+.kicker{font-weight:700;font-size:21px;letter-spacing:.22em;text-transform:uppercase;color:var(--ac)}
+.regua{width:74px;height:2px;background:var(--champagne);margin-top:16px}
+.f-branco .regua,.f-taupe .regua{background:var(--terracota);opacity:.55}
+.cont{font-family:'Anton',Impact,sans-serif;font-size:27px;letter-spacing:.05em;color:var(--ac);opacity:.6}
+
+.corpo{flex:1;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2;
+  padding-bottom:40px}
+.lead{font-weight:400;font-size:45px;line-height:1.22;max-width:840px;opacity:.72}
+.f-terracota .lead{opacity:.9}
+.frase{font-weight:700;font-size:66px;line-height:1.09;letter-spacing:-.004em;max-width:890px}
+.frase.menor{font-size:57px;line-height:1.12}
+.ancora{font-family:'Anton',Impact,sans-serif;line-height:.92;text-transform:uppercase;
+  transform:scaleX(.94);transform-origin:left top;white-space:nowrap;color:var(--destaque)}
+.ancora .ln{display:block;width:max-content}
+.hl{color:var(--destaque)}
+.mt20{margin-top:20px}.mt28{margin-top:28px}.mt36{margin-top:36px}
+.mt44{margin-top:44px}.mt56{margin-top:56px}
+
+.rodape{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2}
+.assina{font-weight:700;font-size:19px;letter-spacing:.2em;text-transform:uppercase;color:var(--ac);opacity:.75}
+.seta{display:flex;gap:4px;align-items:center;color:var(--ac);opacity:.7}
+.seta svg{display:block}
+.pill{display:inline-block;background:var(--terracota);color:var(--branco);font-weight:700;
+  font-size:37px;padding:21px 44px 25px;border-radius:999px}
+</style>
+</head>
+<body>
+
+<!-- 02 O MEDO -->
+<section class="slide f-espresso">
+  <div class="grao"></div>
+  <div class="topo">
+    <div><div class="kicker">O medo mais comum</div><div class="regua"></div></div>
+    <div class="cont">02/07</div>
+  </div>
+  <div class="corpo">
+    <div class="lead">Na hora de decidir a guarda, vem o medo:</div>
+    <div class="frase mt28">o filho com a mochila pronta toda semana,
+      <span class="hl">trocando de casa, de quarto e de rotina.</span></div>
+  </div>
+  <div class="rodape">
+    <div class="assina">Sueli Shimoda</div>
+    <span class="seta"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 5 16 12 9 19"/></svg><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 5 16 12 9 19"/></svg></span>
+  </div>
+</section>
+
+<!-- 03 A CONFUSAO -->
+<section class="slide f-branco">
+  <div class="grao"></div>
+  <div class="topo">
+    <div><div class="kicker">Onde está a confusão</div><div class="regua"></div></div>
+    <div class="cont">03/07</div>
+  </div>
+  <div class="corpo">
+    <div class="lead">Esse receio nasce de uma confusão comum.</div>
+    <div class="frase mt28">Guarda compartilhada não é sobre onde a criança dorme,
+      <span class="hl">e sim sobre quem decide a vida dela.</span></div>
+  </div>
+  <div class="rodape">
+    <div class="assina">Sueli Shimoda</div>
+    <span class="seta"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 5 16 12 9 19"/></svg><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 5 16 12 9 19"/></svg></span>
+  </div>
+</section>
+
+<!-- 04 O QUE A LEI DIZ -->
+<section class="slide f-taupe">
+  <div class="grao"></div>
+  <div class="topo">
+    <div><div class="kicker">O que a lei diz</div><div class="regua"></div></div>
+    <div class="cont">04/07</div>
+  </div>
+  <div class="corpo">
+    <div class="lead">A lei fala em</div>
+    <div class="ancora mt20" style="font-size:136px"><span class="ln">Responsabilidade</span><span class="ln">conjunta</span></div>
+    <div class="frase menor mt44">Escola, saúde, viagens e autorizações seguem sendo decisão dos dois,
+      mesmo morando em casas diferentes.</div>
+  </div>
+  <div class="rodape">
+    <div class="assina">Sueli Shimoda</div>
+    <span class="seta"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 5 16 12 9 19"/></svg><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 5 16 12 9 19"/></svg></span>
+  </div>
+</section>
+
+<!-- 05 O TEMPO DE CONVIVIO -->
+<section class="slide f-espresso">
+  <div class="grao"></div>
+  <div class="topo">
+    <div><div class="kicker">E o tempo de convívio</div><div class="regua"></div></div>
+    <div class="cont">05/07</div>
+  </div>
+  <div class="corpo">
+    <div class="lead">Sobre o tempo, a lei pede convívio</div>
+    <div class="ancora mt20" style="font-size:190px"><span class="ln">Equilibrado</span></div>
+    <div class="frase menor mt44">conforme a realidade da família. A criança pode ter uma casa como base,
+      com sua rotina preservada.</div>
+  </div>
+  <div class="rodape">
+    <div class="assina">Sueli Shimoda</div>
+    <span class="seta"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 5 16 12 9 19"/></svg><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 5 16 12 9 19"/></svg></span>
+  </div>
+</section>
+
+<!-- 06 SINTESE -->
+<section class="slide f-terracota">
+  <div class="grao"></div>
+  <div class="topo">
+    <div><div class="kicker">O que fica</div><div class="regua"></div></div>
+    <div class="cont">06/07</div>
+  </div>
+  <div class="corpo">
+    <div class="lead">O aprendizado é este:</div>
+    <div class="frase mt28">compartilhar a guarda é <span class="hl">dividir decisões</span>,
+      não dividir a infância em metades.</div>
+    <div class="lead mt44">Cada família encontra o arranjo possível.</div>
+  </div>
+  <div class="rodape">
+    <div class="assina">Sueli Shimoda</div>
+    <span class="seta"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 5 16 12 9 19"/></svg><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 5 16 12 9 19"/></svg></span>
+  </div>
+</section>
+
+<!-- 07 ENCERRAMENTO -->
+<section class="slide f-espresso">
+  <div class="grao"></div>
+  <div class="topo">
+    <div><div class="kicker">Antes de decidir</div><div class="regua"></div></div>
+    <div class="cont">07/07</div>
+  </div>
+  <div class="corpo">
+    <div class="frase menor">Idade, distância entre as casas e rotina de trabalho
+      <span class="hl">mudam cada caso.</span></div>
+    <div class="lead mt36">Busque orientação para avaliar a sua situação.</div>
+    <div class="mt56"><span class="pill">Salve este conteúdo</span></div>
+  </div>
+  <div class="rodape">
+    <div class="assina">Sueli Shimoda &nbsp;&nbsp;|&nbsp;&nbsp; Direito de Família</div>
+  </div>
+</section>
+
+</body>
+</html>
