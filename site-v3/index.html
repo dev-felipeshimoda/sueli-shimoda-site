@@ -2,7 +2,7 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <script>
       if (window.location.protocol === 'file:' && !window.location.pathname.endsWith('/standalone.html')) {
         window.location.replace(new URL('./standalone.html', window.location.href).href)
@@ -18,6 +18,22 @@
         }
       }, 4000)
     </script>
+    <script>
+      // MEDIÇÃO: cole aqui o ID do Google Analytics, no formato G-XXXXXXXXXX.
+      // Enquanto estiver vazio, nada é carregado e nenhum cookie é criado.
+      window.__GA_ID = ''
+
+      if (window.__GA_ID) {
+        window.dataLayer = window.dataLayer || []
+        window.gtag = function () { window.dataLayer.push(arguments) }
+        window.gtag('js', new Date())
+        window.gtag('config', window.__GA_ID)
+        var medicao = document.createElement('script')
+        medicao.async = true
+        medicao.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.__GA_ID
+        document.head.appendChild(medicao)
+      }
+    </script>
     <meta name="theme-color" content="#603020" />
     <meta name="description" content="Advogada em Direito de Família, Sucessões e Previdenciário na zona oeste de São Paulo. Atendimento presencial ou online, com escuta atenta e orientação clara." />
     <link rel="canonical" href="https://shimoda.adv.br/" />
@@ -29,33 +45,63 @@
     <meta property="og:url" content="https://shimoda.adv.br/" />
     <meta property="og:title" content="Sueli Shimoda | Advocacia humana e estratégica" />
     <meta property="og:description" content="Direito de Família, Sucessões e Previdenciário na zona oeste de São Paulo. Presencial ou online." />
-    <meta property="og:image" content="https://shimoda.adv.br/og-v2.png" />
+    <meta property="og:image" content="https://shimoda.adv.br/og-v2.jpg" />
     <meta property="og:image:width" content="1672" />
     <meta property="og:image:height" content="941" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:alt" content="Mesa de advocacia com documentos e livros em ambiente sóbrio" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Sueli Shimoda | Advocacia humana e estratégica" />
     <meta name="twitter:description" content="Direito de Família, Sucessões e Previdenciário na zona oeste de São Paulo. Presencial ou online." />
-    <meta name="twitter:image" content="https://shimoda.adv.br/og-v2.png" />
+    <meta name="twitter:image" content="https://shimoda.adv.br/og-v2.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="preload" as="image" href="/assets/hero-advocacia.png" fetchpriority="high" />
+    <link rel="preload" as="image" href="/assets/hero-advocacia.jpg" fetchpriority="high" />
     <title>Sueli Shimoda | Advogada de Família, Sucessões e Previdenciário em São Paulo</title>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Attorney",
-        "name": "Sueli Shimoda Advocacia",
-        "url": "https://shimoda.adv.br/",
-        "image": "https://shimoda.adv.br/og-v2.png",
-        "description": "Advocacia em Direito de Família, Sucessões e Previdenciário, com atendimento presencial na zona oeste de São Paulo ou online.",
-        "email": "contato@shimoda.adv.br",
-        "telephone": "+5511919190999",
-        "areaServed": { "@type": "City", "name": "São Paulo" },
-        "address": { "@type": "PostalAddress", "addressLocality": "São Paulo", "addressRegion": "SP", "addressCountry": "BR" },
-        "sameAs": ["https://www.instagram.com/shimoda_advogada/"],
-        "knowsAbout": ["Direito de Família", "Direito das Sucessões", "Direito Previdenciário"],
-        "availableLanguage": "pt-BR"
+        "@graph": [
+          {
+            "@type": "Attorney",
+            "@id": "https://shimoda.adv.br/#escritorio",
+            "name": "Sueli Shimoda Advocacia",
+            "url": "https://shimoda.adv.br/",
+            "image": "https://shimoda.adv.br/og-v2.jpg",
+            "logo": "https://shimoda.adv.br/icone-512.png",
+            "description": "Advocacia em Direito de Família, Sucessões e Previdenciário, com atendimento presencial na zona oeste de São Paulo ou online.",
+            "email": "contato@shimoda.adv.br",
+            "telephone": "+5511919190999",
+            "areaServed": { "@type": "City", "name": "São Paulo" },
+            "address": { "@type": "PostalAddress", "addressLocality": "São Paulo", "addressRegion": "SP", "addressCountry": "BR" },
+            "sameAs": ["https://www.instagram.com/shimoda_advogada/"],
+            "founder": { "@id": "https://shimoda.adv.br/#sueli" },
+            "knowsAbout": [
+              "Direito de Família", "Direito das Sucessões", "Direito Previdenciário",
+              "Divórcio", "Guarda", "Pensão alimentícia", "Partilha de bens", "Inventário", "Testamento",
+              "Aposentadoria", "Revisão de benefício", "Planejamento previdenciário"
+            ],
+            "availableLanguage": "pt-BR"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://shimoda.adv.br/#sueli",
+            "name": "Sueli Shimoda",
+            "jobTitle": "Advogada",
+            "image": "https://shimoda.adv.br/assets/sueli-escritorio-cortada.jpg",
+            "worksFor": { "@id": "https://shimoda.adv.br/#escritorio" },
+            "sameAs": ["https://www.instagram.com/shimoda_advogada/"]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://shimoda.adv.br/#site",
+            "name": "Sueli Shimoda Advocacia",
+            "url": "https://shimoda.adv.br/",
+            "inLanguage": "pt-BR",
+            "publisher": { "@id": "https://shimoda.adv.br/#escritorio" }
+          }
+        ]
       }
     </script>
   </head>

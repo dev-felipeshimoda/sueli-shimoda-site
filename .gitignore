@@ -3,12 +3,13 @@ node_modules/
 
 # Build (regerado por npm run build)
 dist/
+dist-ssr/
 
 # HTML único do site atual, regerado por npm run single (16 MB por versão)
 site-v3/standalone.html
 
-# Vercel
-.vercel/
+# Pacote de envio para a hospedagem, gerado a cada build
+site-v3/site-shimoda-locaweb.zip
 
 # Sistema e editores
 .DS_Store

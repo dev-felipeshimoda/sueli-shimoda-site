@@ -134,6 +134,19 @@ figure {
   transform: translateY(30px);
 }
 
+/* O HTML chega com o texto pronto. Até o GSAP assumir a entrada do topo,
+   ele fica no mesmo ponto de partida da animação, sem piscar visível e sumir. */
+@media (prefers-reduced-motion: no-preference) {
+  .js-reveal:not([data-app-pronto]) .hero-word,
+  .js-reveal:not([data-app-pronto]) .hero-intro {
+    opacity: 0;
+  }
+
+  .js-reveal:not([data-app-pronto]) .hero-photo-frame {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
 .js-reveal [data-pricing-card],
 .js-reveal .guidance-card {
   --reveal-delay: calc(var(--reveal-index, 0) * 110ms);

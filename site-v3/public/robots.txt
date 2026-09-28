@@ -1,3 +1,6 @@
+# Buscadores e assistentes de IA (ChatGPT, Claude, Gemini, Perplexity) liberados
+# de propósito: quem pergunta a uma IA sobre divórcio ou aposentadoria também
+# pode chegar ao site. Para bloquear algum, criar um bloco User-agent só dele.
 User-agent: *
 Allow: /
 

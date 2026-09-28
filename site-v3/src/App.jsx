@@ -49,7 +49,7 @@ const processPanels = [
     label: 'Primeiro contato',
     title: 'Você conta a sua situação',
     intro: 'A conversa começa pelo que aconteceu e pelo que mais preocupa você neste momento. Não é preciso saber termos jurídicos nem chegar com tudo organizado, basta contar a história do seu jeito.',
-    image: '/assets/processo-01-escuta.png',
+    image: '/assets/processo-01-escuta.jpg',
     alt: 'Conversa acolhedora entre cliente e advogada',
     tone: 'espresso',
     points: [
@@ -63,7 +63,7 @@ const processPanels = [
     label: 'Leitura do caso',
     title: 'Eu analiso o contexto',
     intro: 'Documentos, histórico e particularidades são observados antes de qualquer orientação. Duas situações parecidas podem seguir caminhos diferentes por causa de um detalhe que só aparece na leitura atenta.',
-    image: '/assets/processo-02-analise.png',
+    image: '/assets/processo-02-analise.jpg',
     alt: 'Advogada analisando documentos com atenção',
     tone: 'terracotta',
     points: [
@@ -77,7 +77,7 @@ const processPanels = [
     label: 'Orientação',
     title: 'Você recebe um plano de ação',
     intro: 'As alternativas são comparadas para transformar a análise em providências possíveis e bem definidas. Você entende o que pode ser feito, o que não pode e o que cada escolha costuma custar em tempo e em desgaste.',
-    image: '/assets/processo-03-caminhos.png',
+    image: '/assets/processo-03-caminhos.jpg',
     alt: 'Advogada explicando possibilidades jurídicas em uma reunião',
     tone: 'taupe',
     points: [
@@ -91,7 +91,7 @@ const processPanels = [
     label: 'Acompanhamento',
     title: 'As providências são acompanhadas',
     intro: 'Se houver continuidade, o andamento é conduzido com controle de prazos e atualização dos fatos relevantes. Você não precisa ficar cobrando notícias para saber em que ponto o seu caso está.',
-    image: '/assets/processo-04-acompanhamento.png',
+    image: '/assets/processo-04-acompanhamento.jpg',
     alt: 'Pasta de documentos sendo entregue durante acompanhamento jurídico',
     tone: 'rose',
     points: [
@@ -102,7 +102,7 @@ const processPanels = [
   },
 ]
 
-const faqs = [
+export const faqs = [
   {
     question: 'Como funciona o primeiro atendimento?',
     answer: 'O primeiro contato serve para você apresentar a situação e as dúvidas principais. A partir dessa conversa, Sueli explica quais informações ou documentos serão necessários para uma análise mais precisa.',
@@ -127,8 +127,11 @@ const faqs = [
 
 const marqueeItems = ['Família', 'Sucessões', 'Previdenciário', 'Escuta atenta', 'Orientação clara', 'Atendimento humano']
 
+// No prerender do build não existe window, e o React avisa sobre useLayoutEffect no servidor.
+const useLayoutEffectNoNavegador = typeof window === 'undefined' ? useEffect : useLayoutEffect
+
 function useSiteAnimations(rootRef) {
-  useLayoutEffect(() => {
+  useLayoutEffectNoNavegador(() => {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (reduceMotion) return undefined
 
@@ -208,6 +211,20 @@ function useReveal(rootRef) {
   }, [rootRef])
 }
 
+// Cada caminho para o WhatsApp vira um evento, para saber qual botão traz contato.
+function useMedicaoWhatsApp() {
+  useEffect(() => {
+    const aoClicar = (evento) => {
+      const link = evento.target.closest('a[href*="wa.me"]')
+      if (!link || typeof window.gtag !== 'function') return
+      window.gtag('event', 'contato_whatsapp', { origem: link.dataset.origem || 'nao-identificado' })
+    }
+
+    document.addEventListener('click', aoClicar)
+    return () => document.removeEventListener('click', aoClicar)
+  }, [])
+}
+
 function ScrollProgress() {
   const barRef = useRef(null)
 
@@ -259,10 +276,10 @@ function Brand() {
   )
 }
 
-function OriginButton({ href, children, className = '', external = false }) {
+function OriginButton({ href, children, className = '', external = false, ...resto }) {
   const externalProps = external ? { target: '_blank', rel: 'noreferrer' } : {}
   return (
-    <a className={`origin-button ${className}`} href={href} {...externalProps}>
+    <a className={`origin-button ${className}`} href={href} {...externalProps} {...resto}>
       <span className="origin-button-fill" aria-hidden="true" />
       <span className="origin-button-label">{children}</span>
       <ArrowRight className="cta-arrow" size={18} strokeWidth={1.8} aria-hidden="true" />
@@ -290,11 +307,11 @@ function Header() {
           <a href="#atendimento" onClick={closeMenu}>Como funciona</a>
           <a href="#sobre" onClick={closeMenu}>Sueli Shimoda</a>
           <a href="#faq" onClick={closeMenu}>Dúvidas</a>
-          <a className="mobile-nav-contact" href={waLink()} target="_blank" rel="noreferrer" onClick={closeMenu}>
+          <a className="mobile-nav-contact" href={waLink()} data-origem="menu-mobile" target="_blank" rel="noreferrer" onClick={closeMenu}>
             Conte seu caso <ArrowRight size={18} aria-hidden="true" />
           </a>
         </nav>
-        <OriginButton href={waLink()} external className="header-cta">Conte seu caso</OriginButton>
+        <OriginButton href={waLink()} external className="header-cta" data-origem="topo">Conte seu caso</OriginButton>
         <button
           className="menu-toggle"
           type="button"
@@ -314,7 +331,7 @@ function Hero() {
     <section className="hero" id="inicio">
       <div className="hero-visual" aria-label="Ambiente de trabalho jurídico">
         <div className="hero-photo-frame">
-          <img src="/assets/hero-advocacia.png" alt="Mesa de advocacia com documentos e livros em ambiente sóbrio" />
+          <img src="/assets/hero-advocacia.jpg" alt="Mesa de advocacia com documentos e livros em ambiente sóbrio" width="1672" height="941" fetchpriority="high" />
         </div>
         <p className="hero-caption">Escuta, estratégia e presença em cada etapa.</p>
       </div>
@@ -329,7 +346,7 @@ function Hero() {
           </h1>
           <p className="hero-lead hero-intro">Análise jurídica para organizar o caso, avaliar possibilidades e definir o próximo passo com segurança.</p>
           <div className="hero-actions hero-intro">
-            <OriginButton href={waLink()} external>Conte seu caso</OriginButton>
+            <OriginButton href={waLink()} external data-origem="hero">Conte seu caso</OriginButton>
             <a className="text-link" href="#atuacao">
               Conheça minha atuação
               <ArrowDown className="floating-arrow" size={18} strokeWidth={1.7} aria-hidden="true" />
@@ -375,14 +392,14 @@ function Areas() {
           {areas.map((area, index) => (
             <article className="area-card" data-pricing-card style={{ '--reveal-index': index }} key={area.title}>
               <div className="area-image">
-                <img src={area.image} alt={area.alt} width="1300" height="958" decoding="async" />
+                <img src={area.image} alt={area.alt} width="1300" height="958" loading="lazy" decoding="async" />
                 <span>{area.tag}</span>
               </div>
               <div className="area-content">
                 <div className="card-index">{area.number}</div>
                 <h3>{area.title}</h3>
                 <p>{area.description}</p>
-                <a href={waLink(`Olá, Sueli. Gostaria de conversar sobre ${area.title}.`)} target="_blank" rel="noreferrer">
+                <a href={waLink(`Olá, Sueli. Gostaria de conversar sobre ${area.title}.`)} data-origem={`area-${area.tag}`} target="_blank" rel="noreferrer">
                   Conversar sobre esta área
                   <ArrowRight className="cta-arrow" size={17} aria-hidden="true" />
                 </a>
@@ -442,6 +459,24 @@ function Principles() {
 function ProcessTimeline() {
   const timelineRef = useRef(null)
   const [activeIndex, setActiveIndex] = useState(0)
+  const [mostrarFotos, setMostrarFotos] = useState(false)
+
+  // As quatro fotos de fundo só baixam quando a seção se aproxima da tela,
+  // para não pesar na abertura do site no celular.
+  useEffect(() => {
+    const root = timelineRef.current
+    if (!root || !('IntersectionObserver' in window)) {
+      setMostrarFotos(true)
+      return undefined
+    }
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return
+      setMostrarFotos(true)
+      observer.disconnect()
+    }, { rootMargin: '800px 0px' })
+    observer.observe(root)
+    return () => observer.disconnect()
+  }, [])
 
   useEffect(() => {
     const update = () => {
@@ -482,14 +517,14 @@ function ProcessTimeline() {
           <div
             className={`process-timeline-shot${index === activeIndex ? ' is-active' : ''}`}
             key={panel.number}
-            style={{ backgroundImage: `url(${panel.image})` }}
+            style={mostrarFotos ? { backgroundImage: `url(${panel.image})` } : undefined}
           />
         ))}
         <span className="process-timeline-veil" />
       </div>
       <div className="process-timeline-list">
         <div className="process-timeline-head">
-          <p className="eyebrow">Como funciona</p>
+          <h2 className="eyebrow">Como funciona</h2>
           <span className="process-timeline-counter" aria-hidden="true">
             {String(activeIndex + 1).padStart(2, '0')}<i />04
           </span>
@@ -555,7 +590,7 @@ function About() {
           </div>
         </div>
         <figure className="about-image-frame" data-reveal>
-          <img src="/assets/sueli-escritorio-cortada.jpg" alt="Sueli Shimoda, advogada, sentada à mesa do escritório" width="1147" height="938" decoding="async" />
+          <img src="/assets/sueli-escritorio-cortada.jpg" alt="Sueli Shimoda, advogada, sentada à mesa do escritório" width="1147" height="938" loading="lazy" decoding="async" />
           <figcaption>Sueli Shimoda | Advogada</figcaption>
         </figure>
       </div>
@@ -605,7 +640,7 @@ function Contact() {
           <span>Seu caso merece</span>{' '}
           <span>uma conversa clara.</span>
         </WhisperText>
-        <a className="contact-action" href={waLink()} target="_blank" rel="noreferrer">
+        <a className="contact-action" href={waLink()} data-origem="chamada-final" target="_blank" rel="noreferrer">
           <span className="contact-action-circle"><ArrowUpRight size={31} strokeWidth={1.6} aria-hidden="true" /></span>
           <span className="contact-action-label">Chamar no WhatsApp</span>
         </a>
@@ -639,7 +674,7 @@ function Footer() {
           </div>
           <div>
             <h3>Contato</h3>
-            <a href={waLink()} target="_blank" rel="noreferrer">WhatsApp</a>
+            <a href={waLink()} data-origem="rodape" target="_blank" rel="noreferrer">WhatsApp</a>
             <a href="https://www.instagram.com/shimoda_advogada/" target="_blank" rel="noreferrer">Instagram</a>
             <a href="mailto:contato@shimoda.adv.br">E-mail</a>
             <span>São Paulo, zona oeste</span>
@@ -660,6 +695,7 @@ export default function App() {
   const rootRef = useRef(null)
   useSiteAnimations(rootRef)
   useReveal(rootRef)
+  useMedicaoWhatsApp()
 
   return (
     <div className="app" ref={rootRef}>
@@ -677,7 +713,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
-      <a className="whatsapp-float" href={waLink()} target="_blank" rel="noreferrer" aria-label="Falar com Sueli pelo WhatsApp">
+      <a className="whatsapp-float" href={waLink()} data-origem="botao-flutuante" target="_blank" rel="noreferrer" aria-label="Falar com Sueli pelo WhatsApp">
         <MessageCircle size={23} strokeWidth={1.8} />
       </a>
     </div>

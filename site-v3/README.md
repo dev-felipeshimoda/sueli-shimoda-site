@@ -19,6 +19,8 @@ npm run dev
 npm run build
 ```
 
+O build grava o texto do site dentro do `dist/index.html` (`prerender.mjs`), para buscadores, robôs de IA e prévias de link lerem a página sem executar JavaScript. Também gera os dados estruturados das dúvidas frequentes a partir da mesma lista do `App.jsx`.
+
 ## Gerar HTML único
 
 ```powershell
