@@ -68,10 +68,21 @@ não pra vender. Publicidade mercantilista e captação de clientela são vedada
 **Responsabilidade final é da Sueli.** Nada vai ao ar sem ela ler e aprovar. Se ela pedir algo que
 esbarra nessas regras, avisar antes de produzir, com a alternativa que resolve.
 
+## Definições confirmadas (08/09/2026)
+
+- **Domínio:** `shimoda.adv.br`, registrado na Locaweb. Hospedagem na Locaweb.
+- **E-mail:** `contato@shimoda.adv.br`, caixa já existente.
+- **WhatsApp:** (11) 91919-0999, confirmado como definitivo.
+- **Instagram:** @shimoda_advogada.
+- **Atendimento:** presencial na zona oeste de São Paulo ou online, com hora marcada.
+- **Áreas:** Direito de Família e Sucessões e Direito Previdenciário. Trabalhista saiu da atuação.
+- **Número da OAB:** a Sueli decidiu não exibir, por receio de golpe aplicado em nome dela.
+  Registrado aqui que a identificação é exigência da publicidade jurídica e que a responsabilidade
+  disciplinar é dela. Alternativa oferecida e ainda não decidida: exibir "advogada inscrita na OAB/SP",
+  sem o número. Vale ela confirmar a leitura com a seccional.
+
 ## Pendências (confirmar com a Sueli, via Felipe)
 
-- Número de telefone NOVO (o atual nas peças é 9-1919-0999).
-- @ do Instagram dela.
 - Fotos: usar as que já existem ou ela manda novas.
-- **Número de inscrição na OAB e seccional.** Hoje não aparece no site nem nas peças, e a identificação
-  do advogado é exigência da publicidade jurídica. Pedir pra Sueli e colocar no rodapé do site e na assinatura das artes.
+- Carrossel 01 de apresentação: a arte publicada cita as três áreas, incluindo Trabalhista.
+  Decidido não mexer por enquanto.
