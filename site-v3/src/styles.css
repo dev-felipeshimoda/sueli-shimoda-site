@@ -984,7 +984,9 @@ figure {
   top: 112px;
   align-self: start;
   margin-top: 35px;
-  aspect-ratio: 1147 / 938;
+  aspect-ratio: 1086 / 1448;
+  /* Retrato vertical: em telas baixas o quadro encurta e corta só a parte de baixo da foto. */
+  max-height: calc(100vh - 140px);
   overflow: hidden;
   background: var(--espresso-soft);
 }
@@ -997,7 +999,7 @@ figure {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 34%;
+  object-position: center 18%;
 }
 
 .about-life {
@@ -1689,7 +1691,7 @@ figure {
     top: auto;
     width: 100%;
     margin-top: 0;
-    aspect-ratio: 1147 / 938;
+    aspect-ratio: 1086 / 1448;
   }
 
   .footer-inner {
@@ -1916,7 +1918,8 @@ figure {
     position: relative;
     top: auto;
     margin-top: 0;
-    aspect-ratio: 1147 / 938;
+    max-width: 480px;
+    aspect-ratio: 1086 / 1448;
   }
 
   .faq-item button {
@@ -2484,8 +2487,9 @@ figure {
     position: relative;
     top: auto;
     width: 100%;
+    max-width: 560px;
     margin-top: 0;
-    aspect-ratio: 1147 / 938;
+    aspect-ratio: 1086 / 1448;
   }
 
   .about-copy h2 {

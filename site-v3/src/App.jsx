@@ -590,7 +590,7 @@ function About() {
           </div>
         </div>
         <figure className="about-image-frame" data-reveal>
-          <img src="/assets/sueli-escritorio-cortada.jpg" alt="Sueli Shimoda, advogada, sentada à mesa do escritório" width="1147" height="938" loading="lazy" decoding="async" />
+          <img src="/assets/sueli-sentada.jpg" alt="Sueli Shimoda, advogada, sentada em uma poltrona de couro" width="1086" height="1448" loading="lazy" decoding="async" />
           <figcaption>Sueli Shimoda | Advogada</figcaption>
         </figure>
       </div>
