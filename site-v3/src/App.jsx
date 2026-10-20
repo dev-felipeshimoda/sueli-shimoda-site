@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ArrowDown, ArrowRight, ArrowUpRight, Check, Menu, MessageCircle, Plus, ShieldCheck, X } from 'lucide-react'
-import { waLink } from './wa.js'
+import { TELEFONE_EXIBIDO, waLink } from './wa.js'
 
 const areas = [
   {
@@ -674,17 +674,26 @@ function Footer() {
           </div>
           <div>
             <h3>Contato</h3>
-            <a href={waLink()} data-origem="rodape" target="_blank" rel="noreferrer">WhatsApp</a>
+            <a href={waLink()} data-origem="rodape" target="_blank" rel="noreferrer">WhatsApp {TELEFONE_EXIBIDO}</a>
+            <a href="mailto:contato@shimoda.adv.br">contato@shimoda.adv.br</a>
             <a href="https://www.instagram.com/shimoda_advogada/" target="_blank" rel="noreferrer">Instagram</a>
-            <a href="mailto:contato@shimoda.adv.br">E-mail</a>
             <span>São Paulo, zona oeste</span>
             <span>Atendimento presencial ou online, com hora marcada</span>
           </div>
         </div>
         <div className="footer-wordmark" aria-hidden="true">Sueli Shimoda</div>
         <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Sueli Shimoda Advocacia</span>
+          <span>© {new Date().getFullYear()} Sueli Shimoda Advocacia. Todos os direitos reservados.</span>
           <span>Conteúdo informativo. Cada situação exige análise individual.</span>
+          <nav className="footer-legal" aria-label="Informações legais">
+            <a href="/termos-de-uso/" target="_blank" rel="noopener">Termos de uso</a>
+            <a href="/politica-de-privacidade/" target="_blank" rel="noopener">Política de privacidade</a>
+            <a href="/politica-de-publicidade/" target="_blank" rel="noopener">Política de publicidade</a>
+          </nav>
+          <span>
+            Desenvolvido por{' '}
+            <a href="https://lume-estudio.vercel.app/" target="_blank" rel="noopener">Lume</a>
+          </span>
         </div>
       </div>
     </footer>

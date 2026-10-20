@@ -37,6 +37,7 @@ O número está em `src/wa.js` no formato `55 + DDD + número`, hoje `5511919190
 
 - `src/App.jsx`: conteúdo e seções.
 - `src/styles.css`: design system e responsividade.
+- `termos-de-uso/`, `politica-de-privacidade/`, `politica-de-publicidade/`: páginas legais em HTML puro, com o estilo em `src/legal.css`. A data de "Última atualização" é escrita à mão em cada uma.
 - `public/assets`: fotos e arquivos da identidade visual.
 - `public/og-v2.png`: imagem social na paleta atual.
 - `DIRECAO-CRIATIVA.md`: decisões dos sete prompts consolidadas.
